@@ -1,1 +1,1 @@
-# COVID-19_Emergency_response
+# COVID-19_Emergency_responseGitHubの機能を試すためのリポジトリです

@@ -1,0 +1,138 @@
+<!DOCtype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>診断画面</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  $(function() {
+    $('#Q02').click(function() {
+      $('.second_question').addClass('showUp');
+    });
+    $('#Q03').click(function() {
+      $('.third_question').addClass('showUp');
+    });
+    $('#Q04').click(function() {
+      $('.fourth_question').addClass('showUp');
+    });
+    $('#Q05').click(function() {
+      $('.fifth_question').addClass('showUp');
+    });
+    $('#Q06').click(function() {
+      $('.sixth_question').addClass('showUp');
+    });
+    $('#Q07').click(function() {
+      $('.seventh_question').addClass('showUp');
+    });
+    $('#Q08').click(function() {
+      $('.eighth_question').addClass('showUp');
+    });
+  });
+
+
+</script>
+</head>
+<body id="wrapper">
+<div class="first_question">
+  <div class="title">
+    <h1 id="Q01">質問１</h1>
+  </div>
+  <div class="question_item">
+    <object data="./txt/q01.txt" type="text/plain" width="100%" height="100%"></object>
+  </div>
+  <div class="button_box">
+    <button id="Q02" class="yes_button">YES</button>
+    <button id="A01" class="no_button" onclick="location.href='result.html'">NO</button>
+  </div>
+</div>
+<div class="second_question">
+  <div class="title">
+    <h1 id="Q02">質問２</h1>
+  </div>
+  <div class="question_item">
+    <object data="./txt/q02.txt" type="text/plain" width="100%" height="100%"></object>
+  </div>
+  <div class="button_box">
+    <button id="Q03" class="yes_button">YES</button>
+    <button id="Q08" class="no_button" onclick="location.href='#">NO</button>
+  </div>
+</div>
+<div class="third_question">
+  <div class="title">
+    <h1 id="Q03">質問３</h1>
+  </div>
+  <div class="question_item">
+    <object data="./txt/q03.txt" type="text/plain" width="100%" height="100%"></object>
+  </div>
+  <div class="button_box">
+    <button id="Q04" class="yes_button">YES</button>
+    <button id="Q08" class="no_button" onclick="location.href='#'">NO</button>
+  </div>
+</div>
+<div class="fourth_question">
+  <div class="title">
+    <h1 id="Q04">質問４</h1>
+  </div>
+  <div class="question_item">
+    <object data="./txt/q04.txt" type="text/plain" width="100%" height="100%"></object>
+  </div>
+  <div class="button_box">
+    <button id="Q05" class="yes_button">YES</button>
+    <button id="Q08" class="no_button" onclick="location.href='#'">NO</button>
+  </div>
+</div>
+<div class="fifth_question">
+  <div class="title">
+    <h1 id="Q05">質問５</h1>
+  </div>
+  <div class="question_item">
+    <object data="./txt/q05.txt" type="text/plain" width="100%" height="100%"></object>
+  </div>
+  <div class="button_box">
+    <button id="Q06" class="yes_button">YES</button>
+    <button id="A04" class="no_button" onclick="location.href='result04.html'">NO</button>
+  </div>
+</div>
+<div class="sixth_question">
+  <div class="title">
+    <h1 id="Q06">質問６</h1>
+  </div>
+  <div class="question_item">
+    <object data="./txt/q06.txt" type="text/plain" width="100%" height="100%"></object>
+  </div>
+  <div class="button_box">
+    <button id="Q07" class="yes_button">YES</button>
+    <button id="A05" class="no_button" onclick="location.href='result05.html'">NO</button>
+  </div>
+</div>
+<div class="seventh_question">
+  <div class="title">
+    <h1 id="Q07">質問７</h1>
+  </div>
+  <div class="question_item">
+    <object data="./txt/q07.txt" type="text/plain" width="100%" height="100%"></object>
+  </div>
+  <div class="button_box">
+    <button id="A06" class="yes_button" onclick="location.href='result06.html'">YES</button>
+    <button id="A05" class="no_button" onclick="location.href='result05.html'">NO</button>
+  </div>
+</div>
+<div class="eighth_question">
+  <div  class="title">
+    <h1 id="Q08">質問８</h1>
+  </div>
+  <div class="question_item">
+    <object data="./txt/q08.txt" type="text/plain" width="100%" height="100%"></object>
+  </div>
+  <div class="button_box">
+    <button id="A03" class="yes_button" onclick="location.href='result03.html'">YES</button>
+    <button id="A02" class="no_button" onclick="location.href='result02.html'">NO</button>
+  </div>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>

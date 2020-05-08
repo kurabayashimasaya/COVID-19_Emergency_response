@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<title>結果画面</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/configuration.js"></script>
+<script src="js/commons.js"></script>
+<script>
+$(function () {
+  // クエリパラメータ取得
+  var params = getReqParams();
+  // 設問作成
+  var id = params["resultid"];
+  var beforeId = params["beforeid"];
+  var o1 = json3[id];
+  createResult($('#' + o1.id),o1);
+  // バックの設定
+  var linkElement = $('#backAnchorLink');
+  var hrefStr = linkElement.attr('href');
+  var hrefStr = hrefStr + "?questionid=" + beforeId;
+  linkElement.attr('href',hrefStr);
+});
+</script>
+</head>
+<body id="wrapper">
+</head>
+<body id="wrapper">
+<header id="gheader">
+  <div class="inner clear">
+    <h1 id="logo">
+      <a href="./index.html">
+        <img src="./img/ブレイブハート&ロゴ.jpg" alt="ブレイブハート&ロゴ">
+      </a>
+    </h1>
+  </div>
+  <div class="header_title">
+    <p>『新型コロナウィルス感染症発症時及び感染疑い状況時』の判断</p>
+    <br>
+    <p>YES/NO フロー</p>
+  </div>
+</header>
+<div class="first_question">
+  <div id="A01"></div>
+  <div id="A02"></div>
+  <div id="A03"></div>
+  <div id="A04"></div>
+  <div id="A05"></div>
+  <div id="A06"></div>
+</div>
+
+</body>
+</html>
