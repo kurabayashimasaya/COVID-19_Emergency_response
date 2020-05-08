@@ -39,7 +39,10 @@ function createTop(target1, json1) {
 function createQuestion(target2, json2) {
     // タイトルの作成
     var title_div = $('<div>').appendTo(target2).addClass('title');
-    $('<p>').appendTo(title_div).text(json2.title);
+    for (i = 0; i < target2.length; i++) {
+      question = "Q0" + parseFloat(target2) + ".";
+    }
+    $('<p>').appendTo(title_div).text(question);
     // 設問の作成
     var list_css2 = {
       padding: '20px 0 10px 0'

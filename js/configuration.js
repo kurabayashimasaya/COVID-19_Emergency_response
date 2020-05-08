@@ -7,7 +7,7 @@ var json1 = [
       "list03" : "・現在発熱がある場合",
       "top_id" : "Q01",
       "next_content" : "診断開始",
-      "href" : "test.html?questionid=0",
+      "href" : "test.html?questionid=0&beforeid=0",
   }
 ];
 
@@ -18,13 +18,10 @@ var json2 = [
         "content" : "周囲に新型コロナの疑いまたは、陽性の人物（感染可能性者）が近くに現れた。または、そのような情報を入手した。",
         "yes_id" : "Q02",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=1&beforeid=0",
+        "yes_button_href" : "test.html?questionid=1&beforeid=1",
         "no_id" : "A01",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=0",
-        "return_id" : "backAnchorLink",
-        "return_content" : "return",
-        "return_button_href" : "test.html"
+        "no_button_href" : "result.html?resultid=0"
     },
     {
         "id" : "Q02",
@@ -56,7 +53,7 @@ var json2 = [
         "no_button_href" : "test.html?questionid=7&beforeid=2",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
-        "return_button_href" : "test.html"
+        "return_button_href" : "test.html?questionid=1&beforeid=0"
     },
     {
         "id" : "Q04",
