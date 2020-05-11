@@ -36,12 +36,10 @@ function createTop(target1, json1) {
  * @param {*} target2 対象となる要素
  * @param {*} json2 コンテンツ情報
  */
-function createQuestion(target2, json2) {
+function createQuestion(target2, json2,qNo) {
     // タイトルの作成
     var title_div = $('<div>').appendTo(target2).addClass('title');
-    for (i = 0; i < target2.length; i++) {
-      question = "Q0" + parseFloat(target2) + ".";
-    }
+    question = "Q0" + qNo + ".";
     $('<p>').appendTo(title_div).text(question);
     // 設問の作成
     var list_css2 = {
@@ -64,13 +62,13 @@ function createQuestion(target2, json2) {
     yes_button.attr('id', json2.yes_id);
     yes_button.addClass('yes_button');
     yes_button.text(json2.yes_content);
-    yes_button.attr('href', json2.yes_button_href);
+    yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
     // NOボタンの作成
     var no_button = $('<a>').appendTo(btn_box_div);
     no_button.attr('id', json2.no_id);
     no_button.addClass('no_button');
     no_button.text(json2.no_content);
-    no_button.attr('href', json2.no_button_href);
+    no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
     //戻るボタン作成
     if (json2.id != "Q01") {
       var return_button = $('<a>').appendTo(btn_box_div);

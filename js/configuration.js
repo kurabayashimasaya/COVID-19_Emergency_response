@@ -7,7 +7,7 @@ var json1 = [
       "list03" : "・現在発熱がある場合",
       "top_id" : "Q01",
       "next_content" : "診断開始",
-      "href" : "test.html?questionid=0&beforeid=0",
+      "href" : "test.html?questionid=0&questionno=0",
   }
 ];
 
