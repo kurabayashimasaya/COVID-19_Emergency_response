@@ -17,12 +17,14 @@
     // 設問作成
     var id = params["questionid"];
     var beforeId = params["beforeid"];
+    var beforeNo = parseInt(params["questionno"]);
+    var qNo = beforeNo + 1;
     var o1 = json2[id];
-    createQuestion($('#' + o1.id),o1);
+    createQuestion($('#' + o1.id),o1,qNo);
     // バックの設定
     var linkElement = $('#backAnchorLink');
     var hrefStr = linkElement.attr('href');
-    var hrefStr = hrefStr + "?questionid=" + beforeId;
+    var hrefStr = hrefStr + "?questionid=" + beforeId + "&questionno=" + (beforeNo - 1);
     linkElement.attr('href',hrefStr);
   });
 </script>
