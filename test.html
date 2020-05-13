@@ -17,14 +17,16 @@
     // 設問作成
     var id = params["questionid"];
     var beforeId = params["beforeid"];
+    var select = parseInt(params["selection"]);
+    var s1 = select + 1;
     var beforeNo = parseInt(params["questionno"]);
     var qNo = beforeNo + 1;
     var o1 = json2[id];
-    createQuestion($('#' + o1.id),o1,qNo);
+    createQuestion($('#' + o1.id),o1,s1,qNo);
     // バックの設定
     var linkElement = $('#backAnchorLink');
     var hrefStr = linkElement.attr('href');
-    var hrefStr = hrefStr + "?questionid=" + beforeId + "&questionno=" + (beforeNo - 1);
+    var hrefStr = hrefStr + "?questionid=" + beforeId + "&selection=" + (select - 1) + "&questionno=" + (beforeNo - 1);
     linkElement.attr('href',hrefStr);
   });
 </script>
@@ -46,16 +48,17 @@
     <p>YES/NO フロー</p>
   </div>
 </header>
-<div class="first_question">
-  <div id="Q01"></div>
-  <div id="Q02"></div>
-  <div id="Q03"></div>
-  <div id="Q04"></div>
-  <div id="Q05"></div>
-  <div id="Q06"></div>
-  <div id="Q07"></div>
-  <div id="Q08"></div>
-
+<div class="box_item">
+  <div class="first_question">
+    <div id="Q01"></div>
+    <div id="Q02"></div>
+    <div id="Q03"></div>
+    <div id="Q04"></div>
+    <div id="Q05"></div>
+    <div id="Q06"></div>
+    <div id="Q07"></div>
+    <div id="Q08"></div>
+  </div>
 </div>
 </body>
 </html>

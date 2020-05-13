@@ -10,10 +10,9 @@ function createTop(target1, json1) {
       paddingLeft: "10%"
     }
     var heading_css = {
-      padding: "40px 0 ",
+      padding: "40px 40px 40px 40px",
       fontWeight: "bold",
       fontSize: "140%",
-      textAlign: "center"
     }
     var question_div = $('<div>').appendTo(target1).addClass('question_item');
     $('<p>').appendTo(question_div).text(json1.content).css(heading_css);
@@ -36,18 +35,18 @@ function createTop(target1, json1) {
  * @param {*} target2 対象となる要素
  * @param {*} json2 コンテンツ情報
  */
-function createQuestion(target2, json2,qNo) {
+function createQuestion(target2, json2, select, qNo) {
     // タイトルの作成
     var title_div = $('<div>').appendTo(target2).addClass('title');
     question = "Q0" + qNo + ".";
     $('<p>').appendTo(title_div).text(question);
     // 設問の作成
     var list_css2 = {
-      padding: '20px 0 10px 0'
+      padding: '20px 0 10px 130px'
     }
     var heading_css = {
-      padding: '0 0 10px 0',
-      fontSize: "110%"
+      margin: '100px 80px 30px 80px',
+      fontSize: "130%"
     }
     var question_div = $('<div>').appendTo(target2).addClass('question_item');
     $('<p>').appendTo(question_div).text(json2.content).css(heading_css);
@@ -62,13 +61,13 @@ function createQuestion(target2, json2,qNo) {
     yes_button.attr('id', json2.yes_id);
     yes_button.addClass('yes_button');
     yes_button.text(json2.yes_content);
-    yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
+    yes_button.attr('href', json2.yes_button_href + "&selection=" + select + "&questionno=" + qNo);
     // NOボタンの作成
     var no_button = $('<a>').appendTo(btn_box_div);
     no_button.attr('id', json2.no_id);
     no_button.addClass('no_button');
     no_button.text(json2.no_content);
-    no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
+    no_button.attr('href', json2.no_button_href + "&selection=" + select + "&questionno=" + qNo);
     //戻るボタン作成
     if (json2.id != "Q01") {
       var return_button = $('<a>').appendTo(btn_box_div);
@@ -77,7 +76,6 @@ function createQuestion(target2, json2,qNo) {
       return_button.text(json2.return_content);
       return_button.attr('href', json2.return_button_href);
     }
-
 }
 
 /**
@@ -91,11 +89,11 @@ function createResult(target3, json3) {
     $('<p>').appendTo(title_div).text(json3.title);
     // 設問の作成
     var list_css = {
-      margin: "20px 0 20px 10px"
+      margin: "20px 50px 20px 130px"
     }
     var heading_css = {
-      margin: "0 0 30px 0",
-      fontSize: "120%"
+      margin: '100px 80px 30px 130px',
+      fontSize: "130%"
     }
     var question_div = $('<div>').appendTo(target3).addClass('question_item');
     $('<p>').appendTo(question_div).text(json3.content01).css(heading_css);
