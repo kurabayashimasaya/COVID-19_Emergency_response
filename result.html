@@ -18,11 +18,11 @@ $(function () {
   var beforeId = params["beforeid"];
   var o1 = json3[id];
   createResult($('#' + o1.id),o1);
-  // バックの設定
-  var linkElement = $('#backAnchorLink');
-  var hrefStr = linkElement.attr('href');
-  var hrefStr = hrefStr + "?questionid=" + beforeId;
-  linkElement.attr('href',hrefStr);
+  if (select == 2) {
+    console.log(!true);　
+  } else {
+    console.log(!false);
+  }
 });
 </script>
 </head>
@@ -43,14 +43,15 @@ $(function () {
     <p>YES/NO フロー</p>
   </div>
 </header>
-<div class="first_question">
-  <div id="A01"></div>
-  <div id="A02"></div>
-  <div id="A03"></div>
-  <div id="A04"></div>
-  <div id="A05"></div>
-  <div id="A06"></div>
+<div class="box_item">
+  <div class="first_question">
+    <div id="A01"></div>
+    <div id="A02"></div>
+    <div id="A03"></div>
+    <div id="A04"></div>
+    <div id="A05"></div>
+    <div id="A06"></div>
+  </div>
 </div>
-
 </body>
 </html>
