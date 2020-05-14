@@ -103,6 +103,30 @@ function createResult(target3, json3) {
     $('<p>').appendTo(question_div).text(json3.list02).css(list_css);
     $('<p>').appendTo(question_div).text(json3.list03).css(list_css);
     $('<p>').appendTo(question_div).text(json3.list04).css(list_css);
+    //選択した設問表示
+    var urlParamResult = location.search.substring(1);
+    var paramSplit = urlParamResult.split('&');
+    if (paramSplit[1] == 'selection=2') {
+      var result_div = $('<div>').appendTo(target3).addClass('question_item');
+      $('<p>').appendTo(result_div).text("回答した設問：Q01").css(heading_css);
+    } else if (paramSplit[1] == 'selection=4') {
+      var result_div = $('<div>').appendTo(target3).addClass('question_item');
+      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03").css(heading_css);
+    } else if (paramSplit[1] == 'selection=5') {
+      var result_div = $('<div>').appendTo(target3).addClass('question_item');
+      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03,Q04").css(heading_css);
+    } else if (paramSplit[1] == 'selection=6') {
+      var result_div = $('<div>').appendTo(target3).addClass('question_item');
+      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03,Q04,Q05").css(heading_css);
+    } else if (paramSplit[1] == 'selection=7') {
+      var result_div = $('<div>').appendTo(target3).addClass('question_item');
+      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03,Q04,Q05,Q06").css(heading_css);
+    } else if (paramSplit[1] == 'selection=8') {
+      var result_div = $('<div>').appendTo(target3).addClass('question_item');
+      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03,Q04,Q05,Q06,Q07").css(heading_css);
+    } else {
+      alert("エラー表示");
+    }
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target3).addClass('button_box');
     // topに戻るボタンの作成
