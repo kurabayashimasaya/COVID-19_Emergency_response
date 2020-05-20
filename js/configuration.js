@@ -1,3 +1,5 @@
+
+
 var json1 = [
   {
       "id" : "T00",
@@ -7,7 +9,7 @@ var json1 = [
       "list03" : "",
       "top_id" : "Q01",
       "next_content" : "診断開始",
-      "href" : "test.html?questionid=0&selection=1&questionno=0",
+      "href" : "test.html?questionid=0&questionno=0",
   }
 ];
 
@@ -24,7 +26,7 @@ var json2 = [
         "yes_button_href" : "test.html?questionid=1&beforeid=0",
         "no_id" : "A01",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=0"
+        "no_button_href" : "result.html?resultid=0&no_list=Q01,Q02"
     },
     {
         "id" : "Q02",
@@ -137,10 +139,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1",
+        "yes_button_href" : "result.html?resultid=1&yes_list=Q01,Q02,Q03,Q04,Q05",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2",
+        "no_button_href" : "result.html?resultid=2&no_list=Q01,Q02,Q03,Q04,Q05",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"

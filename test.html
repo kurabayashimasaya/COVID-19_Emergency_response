@@ -17,28 +17,24 @@
     // 設問作成
     var id = params["questionid"];
     var beforeId = params["beforeid"];
-    var select = parseInt(params["selection"]);
-    var s1 = select + 1;
     var beforeNo = parseInt(params["questionno"]);
     var qNo = beforeNo + 1;
     var o1 = json2[id];
-    createQuestion($('#' + o1.id),o1,s1,qNo);
+    createQuestion($('#' + o1.id),o1,qNo);
     // バックの設定
     var linkElement = $('#backAnchorLink');
     var hrefStr = linkElement.attr('href');
-    var hrefStr = hrefStr + "?questionid=" + beforeId + "&selection=" + (select - 1) + "&questionno=" + (beforeNo - 1);
+    var hrefStr = hrefStr + "?questionid=" + beforeId + "&questionno=" + (beforeNo - 1);
     linkElement.attr('href',hrefStr);
   });
 </script>
-</head>
-<body id="wrapper">
 </head>
 <body id="wrapper">
 <header id="gheader">
   <div class="inner clear">
     <h1 id="logo">
       <a href="./index.html">
-        <img src="./img/ブレイブハート&ロゴ.jpg" alt="ブレイブハート&ロゴ">
+        <img src="./img/braveheartlog.jpg" alt="braveheartlog">
       </a>
     </h1>
   </div>

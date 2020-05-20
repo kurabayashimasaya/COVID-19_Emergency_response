@@ -35,7 +35,7 @@ function createTop(target1, json1) {
  * @param {*} target2 対象となる要素
  * @param {*} json2 コンテンツ情報
  */
-function createQuestion(target2, json2, select, qNo) {
+function createQuestion(target2, json2, qNo) {
     // タイトルの作成
     var title_div = $('<div>').appendTo(target2).addClass('title');
     question = "Q0" + qNo + ".";
@@ -61,13 +61,13 @@ function createQuestion(target2, json2, select, qNo) {
     yes_button.attr('id', json2.yes_id);
     yes_button.addClass('yes_button');
     yes_button.text(json2.yes_content);
-    yes_button.attr('href', json2.yes_button_href + "&selection=" + select + "&questionno=" + qNo);
+    yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
     // NOボタンの作成
     var no_button = $('<a>').appendTo(btn_box_div);
     no_button.attr('id', json2.no_id);
     no_button.addClass('no_button');
     no_button.text(json2.no_content);
-    no_button.attr('href', json2.no_button_href + "&selection=" + select + "&questionno=" + qNo);
+    no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
     //戻るボタン作成
     if (json2.id != "Q01") {
       var return_button = $('<a>').appendTo(btn_box_div);
@@ -104,29 +104,30 @@ function createResult(target3, json3) {
     $('<p>').appendTo(question_div).text(json3.list03).css(list_css);
     $('<p>').appendTo(question_div).text(json3.list04).css(list_css);
     //選択した設問表示
-    var urlParamResult = location.search.substring(1);
-    var paramSplit = urlParamResult.split('&');
-    if (paramSplit[1] == 'selection=2') {
-      var result_div = $('<div>').appendTo(target3).addClass('question_item');
-      $('<p>').appendTo(result_div).text("回答した設問：Q01").css(heading_css);
-    } else if (paramSplit[1] == 'selection=4') {
-      var result_div = $('<div>').appendTo(target3).addClass('question_item');
-      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03").css(heading_css);
-    } else if (paramSplit[1] == 'selection=5') {
-      var result_div = $('<div>').appendTo(target3).addClass('question_item');
-      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03,Q04").css(heading_css);
-    } else if (paramSplit[1] == 'selection=6') {
-      var result_div = $('<div>').appendTo(target3).addClass('question_item');
-      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03,Q04,Q05").css(heading_css);
-    } else if (paramSplit[1] == 'selection=7') {
-      var result_div = $('<div>').appendTo(target3).addClass('question_item');
-      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03,Q04,Q05,Q06").css(heading_css);
-    } else if (paramSplit[1] == 'selection=8') {
-      var result_div = $('<div>').appendTo(target3).addClass('question_item');
-      $('<p>').appendTo(result_div).text("回答した設問：Q02,Q03,Q04,Q05,Q06,Q07").css(heading_css);
+    var result_div = $('<div>').appendTo(target3).addClass('question_item');
+    var param = getReqParams();
+    if (param.yes_list) {
+      var yes_list = param.yes_list.split(',');
+      yes_list.forEach(function(qId) {
+        json2.forEach(function(obj) {
+          if (obj.id == qId) {
+            console.log(obj.id + ":" + obj.content);
+            $('<p>').appendTo(result_div).text(obj.id + ":" + obj.yes_content).css(list_css);
+          }
+        });
+      });
     } else {
-      alert("エラー表示");
+      var no_list = param.no_list.split(',');
+      no_list.forEach(function(qId) {
+        json2.forEach(function(obj) {
+          if (obj.id == qId) {
+            console.log(obj.id + ":" + obj.content);
+            $('<p>').appendTo(result_div).text(qId + ":" + obj.no_content).css(list_css);
+          }
+        });
+      });
     }
+
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target3).addClass('button_box');
     // topに戻るボタンの作成
