@@ -2,14 +2,13 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
 <title>質問画面</title>
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/mobile.css" rel="stylesheet" type="text/css">
 <link href="css/reset.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/configuration.js"></script>
 <script src="js/commons.js"></script>
-<script src="js/parameter.js"></script>
 <script>
   $(function () {
     // クエリパラメータ取得
@@ -24,24 +23,24 @@
     // バックの設定
     var linkElement = $('#backAnchorLink');
     var hrefStr = linkElement.attr('href');
-    var hrefStr = hrefStr + "?questionid=" + beforeId + "&questionno=" + (beforeNo - 1);
+    var hrefStr = hrefStr + "?questionid=" + beforeId + "&beforeid=" + (beforeId - 1) + "&questionno=" + (beforeNo - 1);
     linkElement.attr('href',hrefStr);
   });
 </script>
 </head>
 <body id="wrapper">
 <header id="gheader">
-  <div class="inner clear">
+  <div class="inner">
     <h1 id="logo">
       <a href="./index.html">
         <img src="./img/braveheartlog.jpg" alt="braveheartlog">
       </a>
     </h1>
-  </div>
-  <div class="header_title">
-    <p>『新型コロナウィルス感染症発症時及び感染疑い状況時』の判断</p>
-    <br>
-    <p>YES/NO フロー</p>
+    <div class="header_title">
+      <p>『新型コロナウィルス感染症発症時及び感染疑い状況時』の判断</p>
+      <br>
+      <p>YES/NO フロー</p>
+    </div>
   </div>
 </header>
 <div class="box_item">
@@ -53,7 +52,11 @@
     <div id="Q05"></div>
     <div id="Q06"></div>
     <div id="Q07"></div>
-    <div id="Q08"></div>
+    <div id="Q08A"></div>
+    <div id="Q08B"></div>
+    <div id="Q08C"></div>
+    <div id="Q06_routea"></div>
+    <div id="Q08_routeb"></div>
   </div>
 </div>
 </body>
