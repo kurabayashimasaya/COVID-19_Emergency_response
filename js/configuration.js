@@ -1,5 +1,4 @@
 
-
 var json1 = [
   {
       "id" : "T00",
@@ -8,9 +7,9 @@ var json1 = [
       "list02" : "・現在発熱がある場合",
       "list03" : "",
       "routea_link" : "ルートAはこちら",
-      "href01" : "test.html?questionid=10",
+      "href01" : "test.html?questionid=10&questionno=5",
       "routeb_link" : "ルートBはこちら",
-      "href02" : "test.html?questionid=11",
+      "href02" : "test.html?questionid=12&questionno=7",
       "top_id" : "Q01",
       "next_content" : "診断開始",
       "top_href" : "test.html?questionid=0&questionno=0"
@@ -30,7 +29,7 @@ var json2 = [
         "yes_button_href" : "test.html?questionid=1&beforeid=0",
         "no_id" : "A01",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=0&yes_list=Q01"
+        "no_button_href" : "result.html?resultid=0&list=Q01"
     },
     {
         "id" : "Q02",
@@ -95,7 +94,7 @@ var json2 = [
         "yes_button_href" : "test.html?questionid=5&beforeid=4",
         "no_id" : "A04",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=3&yes_list=Q01,Q02,Q03,Q04,Q05",
+        "no_button_href" : "result.html?resultid=3&list=Q01,Q02,Q03,Q04,Q05",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -112,7 +111,7 @@ var json2 = [
         "yes_button_href" : "test.html?questionid=6&beforeid=5",
         "no_id" : "A05",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=4&yes_list=Q01,Q02,Q03,Q04,Q05,Q06",
+        "no_button_href" : "result.html?resultid=4&list=Q01,Q02,Q03,Q04,Q05,Q06",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -126,16 +125,16 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A06",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=5&yes_list=Q01,Q02,Q03,Q04,Q05,Q06,Q07",
+        "yes_button_href" : "result.html?resultid=5&list=Q01,Q02,Q03,Q04,Q05,Q06,Q07",
         "no_id" : "A05",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=4&no_list=Q01,Q02,Q03,Q04,Q05,Q06,Q07",
+        "no_button_href" : "result.html?resultid=4&list=Q01,Q02,Q03,Q04,Q05,Q06,Q07",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
     },
     {
-        "id" : "Q08A",
+        "id" : "Q03B",
         "content" : "新型コロナウィルスに関する現場指示が存在する。",
         "list01" : "",
         "list02" : "",
@@ -143,16 +142,16 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1&yes_list=Q01,Q02,Q03",
+        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03B",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2&no_list=Q01,Q02,Q03",
+        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03B",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
     },
     {
-        "id" : "Q08B",
+        "id" : "Q04B",
         "content" : "新型コロナウィルスに関する現場指示が存在する。",
         "list01" : "",
         "list02" : "",
@@ -160,16 +159,16 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1&yes_list=Q01,Q02,Q03,Q04",
+        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03,Q04B",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2&no_list=Q01,Q02,Q03,Q04",
+        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03,Q04B",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
     },
     {
-        "id" : "Q08C",
+        "id" : "Q05B",
         "content" : "新型コロナウィルスに関する現場指示が存在する。",
         "list01" : "",
         "list02" : "",
@@ -177,10 +176,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1&yes_list=Q01,Q02,Q03,Q04,Q05",
+        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03,Q04,Q05B",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2&no_list=Q01,Q02,Q03,Q04,Q05",
+        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03,Q04,Q05B",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -195,17 +194,33 @@ var json2 = [
         "list04" : "",
         "yes_id" : "Q07",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=6&beforeid=5",
+        "yes_button_href" : "test.html?questionid=11&beforeid=0",
         "no_id" : "A05",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=4&yes_list=Q01,Q02,Q03,Q04,Q05,Q06",
+        "no_button_href" : "result.html?resultid=4&list=Q06",
+        "return_id" : "backAnchorLink",
+        "return_content" : "return",
+        "return_button_href" : "test.html"
+    },
+    {
+        "id" : "Q07_routea",
+        "content" : "当事者が陽性であると判断された。",
+        "list01" : "",
+        "list02" : "",
+        "list03" : "",
+        "list04" : "",
+        "yes_id" : "A06",
+        "yes_content" : "YES",
+        "yes_button_href" : "result.html?resultid=5&list=Q06,Q07",
+        "no_id" : "A05",
+        "no_content" : "NO",
+        "no_button_href" : "result.html?resultid=4&list=Q06,Q07",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
     },
     {
         "id" : "Q08_routeb",
-        "title" : "Q08",
         "content" : "新型コロナウィルスに関する現場指示が存在する。",
         "list01" : "",
         "list02" : "",
@@ -213,10 +228,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1&yes_list=Q01,Q02,Q03,Q04,Q05",
+        "yes_button_href" : "result.html?resultid=1&q=Q08_routeb",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2&no_list=Q01,Q02,Q03,Q04,Q05",
+        "no_button_href" : "result.html?resultid=2&q=Q08_routeb",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -280,6 +295,8 @@ var json3 = [
       "list03" : "",
       "link_list" : "※1状況の報告についてはこちら",
       "report_href" : "template.html",
+      "routea_link" : "ルートAはこちら",
+      "href01" : "test.html?questionid=10&questionno=5",
       "exit_id" : "T00",
       "exit_content" : "topに戻る",
       "href" : "index.html"
@@ -295,6 +312,8 @@ var json3 = [
       "list03" : "・体調回復後は、「ルートB」を参照してフローの確認を進めてください。",
       "link_list" : "※1状況の報告についてはこちら",
       "report_href" : "template.html",
+      "routeb_link" : "ルートBはこちら",
+      "href02" : "test.html?questionid=12&questionno=7",
       "exit_id" : "T00",
       "exit_content" : "topに戻る",
       "href" : "index.html"
@@ -310,6 +329,8 @@ var json3 = [
       "list03" : "",
       "link_list" : "※1状況の報告についてはこちら",
       "report_href" : "template.html",
+      "routeb_link" : "ルートBはこちら",
+      "href02" : "test.html?questionid=12&questionno=7",
       "exit_id" : "T00",
       "exit_content" : "topに戻る",
       "href" : "index.html"

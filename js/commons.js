@@ -4,20 +4,20 @@
  * @param {*} json1 コンテンツ情報
  */
 function createTop(target1, json1) {
-    var question_div = $('<div>').appendTo(target1);
+    var question_div = $('<div>').appendTo(target1).addClass('list_item');
     $('<p>').appendTo(question_div).text(json1.content).addClass('top_heading');
     $('<p>').appendTo(question_div).text(json1.list01).addClass('top_list_content clear');
     $('<p>').appendTo(question_div).text(json1.list02).addClass('top_list_content');
     $('<p>').appendTo(question_div).text(json1.list03).addClass('top_list_content');
     $('<p>').appendTo(question_div).text(json1.list04).addClass('top_list_content');
     //報告テンプレートリンク
-    var route_div = $('<div>').appendTo(target1).addClass('question_item');
+    var route_div = $('<div>').appendTo(target1).addClass('top_item');
     var routea_link = $('<a>').appendTo(route_div);
     routea_link.text(json1.routea_link).addClass('top_link_content');
-    routea_link.attr('href', json1.href01)
+    routea_link.attr('href', json1.href01);
     var routeb_link = $('<a>').appendTo(route_div);
     routeb_link.text(json1.routeb_link).addClass('top_link_content');
-    routeb_link.attr('href', json1.href02)
+    routeb_link.attr('href', json1.href02);
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target1).addClass('button_box');
     // YESボタンの作成
@@ -46,7 +46,7 @@ function createQuestion(target2, json2, qNo) {
       margin: '100px 80px 30px 80px',
       fontSize: "130%"
     }
-    var question_div = $('<div>').appendTo(target2).addClass('question_item');
+    var question_div = $('<div>').appendTo(target2).addClass('list_item');
     $('<p>').appendTo(question_div).text(json2.content).addClass('question_heasding');
     $('<p>').appendTo(question_div).text(json2.list01).addClass('question_list_content clear');
     $('<p>').appendTo(question_div).text(json2.list02).addClass('question_list_content');
@@ -93,40 +93,46 @@ function createResult(target3, json3) {
       margin: '100px 80px 30px 130px',
       fontSize: "130%"
     }
-    var question_div = $('<div>').appendTo(target3).addClass('question_item');
+    var question_div = $('<div>').appendTo(target3).addClass('list_item');
     $('<p>').appendTo(question_div).text(json3.content01).addClass('result_heasding');
     $('<p>').appendTo(question_div).text(json3.content02).addClass('result_heasding');
-    $('<p>').appendTo(question_div).text(json3.list01).addClass('result_list_content clear');
+    $('<p>').appendTo(question_div).text(json3.list01).addClass('result_list_content01 clear');
     $('<p>').appendTo(question_div).text(json3.content03).addClass('result_heasding');
-    $('<p>').appendTo(question_div).text(json3.list02).addClass('result_list_content');
-    $('<p>').appendTo(question_div).text(json3.list03).addClass('result_list_content');
-    $('<p>').appendTo(question_div).text(json3.list04).addClass('result_list_content');
+    $('<p>').appendTo(question_div).text(json3.list02).addClass('result_list_content01');
+    $('<p>').appendTo(question_div).text(json3.list03).addClass('result_list_content01');
+    $('<p>').appendTo(question_div).text(json3.list04).addClass('result_list_content01');
     //報告テンプレートリンク
     var report_link = $('<a>').appendTo(question_div);
-    report_link.text(json3.link_list).addClass('result_list_content');
-    report_link.attr('href', json3.report_href)
+    report_link.text(json3.link_list).addClass('result_list_content01');
+    report_link.attr('href', json3.report_href);
+    var routea_link = $('<a>').appendTo(question_div);
+    routea_link.text(json3.routea_link).addClass('result_list_content02');
+    routea_link.attr('href', json3.href01);
+    var routeb_link = $('<a>').appendTo(question_div);
+    routeb_link.text(json3.routeb_link).addClass('result_list_content02');
+    routeb_link.attr('href', json3.href02);
     //選択した設問表示
-    var result_div = $('<div>').appendTo(target3).addClass('question_item');
-    $('<p>').appendTo(result_div).text('選択した質問').addClass('result_list_content');
+    var result_div = $('<div>').appendTo(target3).addClass('list_item');
+    $('<p>').appendTo(result_div).text('選択した質問').addClass('result_list_content01');
     var param = getReqParams();
 
-    if (param.yes_list) {
-      var yes_list = param.yes_list.split(',');
-      yes_list.forEach(function(qId) {
+    if (param.q == "Q08_routeb") {
+      var route_b = param.q.split(',');
+      route_b.forEach(function(qId) {
         json2.forEach(function(obj) {
           if (obj.id == qId) {
             console.log(obj.id + ":" + obj.content);
-            $('<p>').appendTo(result_div).text(obj.id + ":" + obj.content).addClass('result_list_content');
+            $('<p>').appendTo(result_div).text("Q08:" + obj.content).addClass('result_list_content01');
           }
         });
       });
     } else {
-      var no_list = param.no_list.split(',');
-      no_list.forEach(function(qId) {
+      var list = param.list.split(',');
+      list.forEach(function(qId) {
         json2.forEach(function(obj) {
           if (obj.id == qId) {
             console.log(obj.id + ":" + obj.content);
-            $('<p>').appendTo(result_div).text(qId + ":" + obj.content).addClass('result_list_content');
+            $('<p>').appendTo(result_div).text(obj.id + ":" + obj.content).addClass('result_list_content01');
           }
         });
       });
