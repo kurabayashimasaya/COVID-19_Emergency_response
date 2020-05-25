@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-
 * {
   margin :0px;
   padding: 0px;
@@ -11,6 +10,7 @@
     font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
   }
 @media screen and (min-width:480px) {
+  /*header*/
   #gheader {
     background-color: #FFFFFF;
     font-size: 140%;
@@ -26,9 +26,6 @@
     vertical-align: bottom;
     max-width: 100%;
   }
-  a {
-    text-decoration: none;
-  }
   .header_title {
     text-align: center;
     padding: 10px 20px 40px 20px;
@@ -38,25 +35,31 @@
     width: 70%;
     margin: 0 auto;
   }
+  /*main*/
+  .list_item {
+    background-color: #1212;
+    margin: 0 10% 0 10%;
+  }
   .title {
-    padding: 0 10px 25px 150px;
     font-size: 130%;
     font-weight: bold;
     float: left;
   }
-  .question_item {
-    margin: 0 30px 0 30px;
-    list-style: circle;
-  }
-  .top_item {
-    text-align: center;
-  }
-  .list_item {
-    width: 750px;
-    margin: 0 auto;
-  }
   .box_item {
     margin: 30px 0 30px 0;
+  }
+  .clear {
+    clear:both;
+  }
+  /*ボタン*/
+  .button_box {
+    text-align:center;
+    padding: 30px 0 30px 0;
+  }
+  /*top画面*/
+  .top_item {
+    text-align: right;
+    margin: 20px 50px 20px 0;
   }
   .top_heading {
     margin: 2.0rem 2.0rem 2.0rem 2.5rem;
@@ -64,39 +67,18 @@
     font-size: 1.2rem;
     font-weight: bold;
   }
-  .question_heasding {
-    margin: 30px 150px 30px 30px;
-    font-size: 120%;
-    font-weight: bold;
-  }
-  .result_heasding {
-    margin: 40px 150px 30px 60px;
-    font-size: 120%;
-    font-weight: bold;
-  }
   .top_list_content {
     padding: 20px 20px 20px 100px;
   }
-  .question_list_content {
-    margin: 1.0rem;
-  }
-  .result_list_content01 {
-    margin: 30px 40px 30px 50px;
-  }
-  .result_list_content02 {
-    margin: 30px 40px 30px 50px;
-    display: block;
-  }
-  .clear {
-    clear:both;
-  }
   .top_link_content {
-    padding: 50px;
+    margin-left: 50px;
   }
-  /*ボタン*/
-  .button_box {
-    text-align:center;
-    padding: 30px 0 30px 0;
+  .top_box {
+    background-color: #FFFFFF;
+    width: 60%;
+    padding: 10px 0 10px 0;
+    margin: 0 auto;
+    margin-top: 30px;
   }
   .start_button {
     position: relative;
@@ -118,6 +100,22 @@
   }
   .start_button:focus {
     outline: 2px #7cb7f7 solid;
+  }
+  /*質問画面*/
+  .question_heasding {
+    margin: 30px 150px 30px 30px;
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .question_list_content {
+    margin: 1.0rem;
+  }
+  .question_box {
+    background-color: #FFFFFF;
+    width: 60%;
+    padding: 10px 0 10px 0;
+    margin: auto;
+    margin-top: 30px;
   }
   .yes_button {
     width: 95px;
@@ -164,6 +162,31 @@
   .no_button:focus {
     outline: 2px #7cb7f7 solid;
   }
+   /*結果画面*/
+  .result_heading01 {
+    margin: 5% 10% 0 10%;
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .result_list_content01 {
+    margin: 30px 50px 30px 50px;
+  }
+  .result_heading02 {
+    margin: 30px 50px 30px 50px;
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .result_list_content02 {
+    margin: 30px 50px 30px 50px;
+    display: block;
+  }
+  .result_box {
+    background-color: #FFFFFF;
+    width: 60%;
+    padding: 10px 0 10px 0;
+    margin: auto;
+    margin-top: 30px;
+  }
   .return_button {
     width: 50px;
     margin: 20px 50px;
@@ -186,34 +209,8 @@
   .return_button:focus {
     outline: 2px #7cb7f7 solid;
   }
-  /*top*/
-  .start_question {
-    background-color: #FFFFFF;
-    width: 700px;
-    margin: auto;
-    padding-top: 10px;
-    margin-top: 50px;
-  }
-  /*質問画面*/
-  .top_question {
-    background-color: #FFFFFF;
-    width: 60%;
-    padding: 10px 0 10px 0;
-    margin: 0 auto;
-    margin-top: 30px;
-  }
-  .first_question {
-    background-color: #FFFFFF;
-    width: 60%;
-    padding: 10px 0 10px 0;
-    margin: auto;
-    margin-top: 30px;
-  }
-  .return_question {
-    padding: 0 0 0px 30px;
-  }
   /*template*/
-  .template_box {
+  .template_content {
     margin: 10%;
   }
   .template_title {
@@ -224,8 +221,16 @@
   .template_itme {
     margin: 20px 10px 20px 10px;
   }
+  .template_box {
+    background-color: #FFFFFF;
+    width: 60%;
+    padding: 10px 0 10px 0;
+    margin: auto;
+    margin-top: 30px;
+  }
  }
   @media screen and (max-width:479px) {
+    /*header*/
     #gheader {
       background-color: #FFFFFF;
       font-size: 110%;
@@ -250,62 +255,49 @@
       width: 98%;
       margin: 0 auto;
     }
+    /*main*/
     .title {
-      padding: 0 1.0rem 3.0rem 2.5rem;
-      font-size: 110%;
+      font-size: 130%;
       font-weight: bold;
       float: left;
     }
-    .question_item {
-      margin: 0 30px 0 30px;
-      list-style: circle;
+    .list_item {
+      background-color: #1212;
+      margin: 0 10% 0 10%;
     }
     .box_item {
       margin: 30px 0 30px 0;
+    }
+    .clear {
+      clear:both;
+    }
+    /*ボタンbox*/
+    .button_box {
+      text-align:center;
+      padding: 2.0rem;
+    }
+    /*top画面*/
+    .top_item {
+      text-align: center;
+      margin: 20px 20px 20px 0;
     }
     .top_heading {
       margin: 2.0rem 2.0rem 2.0rem 2.5rem;
       font-size: 1.2rem;
       font-weight: bold;
     }
-    .question_heasding {
-      margin: 1.0rem 1.0rem 2.0rem 1.5rem;
-      font-size: 1.0rem;
-      font-weight: bold;
-    }
-    .question_heasding {
-      margin: 3.0rem 1.0rem 1.0rem 1.5rem;
-      font-size: 1.0rem;
-      font-weight: bold;
-    }
-    .result_heasding {
-      margin: 3.0rem 1.0rem 1.0rem 1.5rem;
-      font-size: 1.0rem;
-      font-weight: bold;
-    }
     .top_list_content {
       margin: 1.0rem 1.0rem 2.0rem 1.5rem;
     }
-    .question_list_content {
-      margin: 1.0rem;
-    }
-    .result_list_content01 {
-      margin: 2.0rem 1.5rem 1.0rem 1.5rem;
-    }
-    .result_list_content02 {
-      margin: 2.0rem 1.5rem 1.0rem 1.5rem;
-      display: block;
-    }
-    .clear {
-      clear:both;
-    }
     .top_link_content {
-      padding: 1.5rem;
+      margin-left: 1.5rem;
     }
-    /*ボタン*/
-    .button_box {
-      text-align:center;
-      padding: 2.0rem;
+    .top_box {
+      background-color: #FFFFFF;
+      width: 90%;
+      padding: 10px 0 10px 0;
+      margin: 0 auto;
+      margin-top: 30px;
     }
     .start_button {
       position: relative;
@@ -327,6 +319,22 @@
     }
     .start_button:focus {
       outline: 2px #7cb7f7 solid;
+    }
+    /*質問画面*/
+    .question_heasding {
+      margin: 3.0rem 1.0rem 1.0rem 1.5rem;
+      font-size: 1.0rem;
+      font-weight: bold;
+    }
+    .question_list_content {
+      margin: 1.0rem;
+    }
+    .question_box {
+      background-color: #FFFFFF;
+      width: 90%;
+      padding: 10px 0 10px 0;
+      margin: auto;
+      margin-top: 30px;
     }
     .yes_button {
       width: 95px;
@@ -373,6 +381,31 @@
     .no_button:focus {
       outline: 2px #7cb7f7 solid;
     }
+    /*結果画面*/
+    .result_heading01 {
+      margin: 3.0rem 1.0rem 1.0rem 1.5rem;
+      font-size: 1.0rem;
+      font-weight: bold;
+    }
+    .result_list_content01 {
+      margin: 2.0rem 1.5rem 1.0rem 1.5rem;
+    }
+    .result_heading02 {
+      margin: 2.0rem 1.5rem 1.0rem 1.5rem;
+      font-size: 120%;
+      font-weight: bold;
+    }
+    .result_list_content02 {
+      margin: 2.0rem 1.5rem 1.0rem 1.5rem;
+      display: block;
+    }
+    .result_box {
+      background-color: #FFFFFF;
+      width: 90%;
+      padding: 10px 0 10px 0;
+      margin: auto;
+      margin-top: 30px;
+    }
     .return_button {
       width: 50px;
       margin: 20px 50px;
@@ -395,34 +428,8 @@
     .return_button:focus {
       outline: 2px #7cb7f7 solid;
     }
-    /*top*/
-    .start_question {
-      background-color: #FFFFFF;
-      width: 700px;
-      margin: auto;
-      padding-top: 10px;
-      margin-top: 50px;
-    }
-    /*質問画面*/
-    .top_question {
-      background-color: #FFFFFF;
-      width: 90%;
-      padding: 10px 0 10px 0;
-      margin: 0 auto;
-      margin-top: 30px;
-    }
-    .first_question {
-      background-color: #FFFFFF;
-      width: 90%;
-      padding: 10px 0 10px 0;
-      margin: auto;
-      margin-top: 30px;
-    }
-    .return_question {
-      padding: 0 0 0px 30px;
-    }
     /*template*/
-    .template_box {
+    .template_content {
       margin: 10%;
     }
     .template_title {
@@ -432,5 +439,12 @@
     }
     .template_itme {
       margin: 20px 10px 20px 10px;
+    }
+    .template_box {
+      background-color: #FFFFFF;
+      width: 90%;
+      padding: 10px 0 10px 0;
+      margin: auto;
+      margin-top: 30px;
     }
   }

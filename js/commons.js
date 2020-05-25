@@ -10,14 +10,6 @@ function createTop(target1, json1) {
     $('<p>').appendTo(question_div).text(json1.list02).addClass('top_list_content');
     $('<p>').appendTo(question_div).text(json1.list03).addClass('top_list_content');
     $('<p>').appendTo(question_div).text(json1.list04).addClass('top_list_content');
-    //報告テンプレートリンク
-    var route_div = $('<div>').appendTo(target1).addClass('top_item');
-    var routea_link = $('<a>').appendTo(route_div);
-    routea_link.text(json1.routea_link).addClass('top_link_content');
-    routea_link.attr('href', json1.href01);
-    var routeb_link = $('<a>').appendTo(route_div);
-    routeb_link.text(json1.routeb_link).addClass('top_link_content');
-    routeb_link.attr('href', json1.href02);
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target1).addClass('button_box');
     // YESボタンの作成
@@ -26,6 +18,14 @@ function createTop(target1, json1) {
     top_button.addClass('start_button');
     top_button.text(json1.next_content);
     top_button.attr('href', json1.top_href);
+    //報告テンプレートリンク
+    var route_div = $('<div>').appendTo(target1).addClass('top_item');
+    var routea_link = $('<a>').appendTo(route_div);
+    routea_link.text(json1.routea_link).addClass('top_link_content');
+    routea_link.attr('href', json1.href01);
+    var routeb_link = $('<a>').appendTo(route_div);
+    routeb_link.text(json1.routeb_link).addClass('top_link_content');
+    routeb_link.attr('href', json1.href02);
 }
 
 /**
@@ -34,19 +34,11 @@ function createTop(target1, json1) {
  * @param {*} json2 コンテンツ情報
  */
 function createQuestion(target2, json2, qNo) {
-    // タイトルの作成
-    var title_div = $('<div>').appendTo(target2).addClass('title');
-    question = "Q0" + qNo + ".";
-    $('<p>').appendTo(title_div).text(question);
+    // タイトルの作
     // 設問の作成
-    var list_css2 = {
-      padding: '20px 0 10px 130px'
-    }
-    var heading_css = {
-      margin: '100px 80px 30px 80px',
-      fontSize: "130%"
-    }
     var question_div = $('<div>').appendTo(target2).addClass('list_item');
+    question = "Q0" + qNo + ".";
+    $('<p>').appendTo(question_div).text(question).addClass('title');
     $('<p>').appendTo(question_div).text(json2.content).addClass('question_heasding');
     $('<p>').appendTo(question_div).text(json2.list01).addClass('question_list_content clear');
     $('<p>').appendTo(question_div).text(json2.list02).addClass('question_list_content');
@@ -54,6 +46,7 @@ function createQuestion(target2, json2, qNo) {
     $('<p>').appendTo(question_div).text(json2.list04).addClass('question_list_content');
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target2).addClass('button_box');
+    if (json2.id == "Q01") {
       // YESボタンの作成
       var yes_button = $('<a>').appendTo(btn_box_div);
       yes_button.attr('id', json2.yes_id);
@@ -66,8 +59,40 @@ function createQuestion(target2, json2, qNo) {
       no_button.addClass('no_button');
       no_button.text(json2.no_content);
       no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
-    //戻るボタン作成
-    if (json2.id != "Q01") {
+    } else if (json2.id == "Q06_routea") {
+      var yes_button = $('<a>').appendTo(btn_box_div);
+      yes_button.attr('id', json2.yes_id);
+      yes_button.addClass('yes_button');
+      yes_button.text(json2.yes_content);
+      yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
+      var no_button = $('<a>').appendTo(btn_box_div);
+      no_button.attr('id', json2.no_id);
+      no_button.addClass('no_button');
+      no_button.text(json2.no_content);
+      no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
+    } else if (json2.id == "Q08_routeb") {
+      var yes_button = $('<a>').appendTo(btn_box_div);
+      yes_button.attr('id', json2.yes_id);
+      yes_button.addClass('yes_button');
+      yes_button.text(json2.yes_content);
+      yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
+      var no_button = $('<a>').appendTo(btn_box_div);
+      no_button.attr('id', json2.no_id);
+      no_button.addClass('no_button');
+      no_button.text(json2.no_content);
+      no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
+    } else {
+      var yes_button = $('<a>').appendTo(btn_box_div);
+      yes_button.attr('id', json2.yes_id);
+      yes_button.addClass('yes_button');
+      yes_button.text(json2.yes_content);
+      yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
+      var no_button = $('<a>').appendTo(btn_box_div);
+      no_button.attr('id', json2.no_id);
+      no_button.addClass('no_button');
+      no_button.text(json2.no_content);
+      no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
+      //戻るボタン作成
       var return_button = $('<a>').appendTo(btn_box_div);
       return_button.attr('id', json2.return_id);
       return_button.addClass('return_button');
@@ -82,22 +107,13 @@ function createQuestion(target2, json2, qNo) {
  * @param {*} json3 コンテンツ情報
  */
 function createResult(target3, json3) {
-    // タイトルの作成
-    var title_div = $('<div>').appendTo(target3).addClass('title');
-    $('<p>').appendTo(title_div).text(json3.title);
-    // 設問の作成
-    var list_css = {
-      margin: '20px 50px 20px 130px'
-    }
-    var heading_css = {
-      margin: '100px 80px 30px 130px',
-      fontSize: "130%"
-    }
     var question_div = $('<div>').appendTo(target3).addClass('list_item');
-    $('<p>').appendTo(question_div).text(json3.content01).addClass('result_heasding');
-    $('<p>').appendTo(question_div).text(json3.content02).addClass('result_heasding');
+    // 設問の作成
+    $('<p>').appendTo(question_div).text(json3.title).addClass('title');
+    $('<p>').appendTo(question_div).text(json3.content01).addClass('result_heading01');
+    $('<p>').appendTo(question_div).text(json3.content02).addClass('result_heading01');
     $('<p>').appendTo(question_div).text(json3.list01).addClass('result_list_content01 clear');
-    $('<p>').appendTo(question_div).text(json3.content03).addClass('result_heasding');
+    $('<p>').appendTo(question_div).text(json3.content03).addClass('result_heading01');
     $('<p>').appendTo(question_div).text(json3.list02).addClass('result_list_content01');
     $('<p>').appendTo(question_div).text(json3.list03).addClass('result_list_content01');
     $('<p>').appendTo(question_div).text(json3.list04).addClass('result_list_content01');
@@ -113,7 +129,7 @@ function createResult(target3, json3) {
     routeb_link.attr('href', json3.href02);
     //選択した設問表示
     var result_div = $('<div>').appendTo(target3).addClass('list_item');
-    $('<p>').appendTo(result_div).text('選択した質問').addClass('result_list_content01');
+    $('<p>').appendTo(result_div).text('選択した質問').addClass('result_heading02');
     var param = getReqParams();
 
     if (param.q == "Q08_routeb") {
@@ -157,7 +173,7 @@ function createTemplate(target4, json4) {
       marginLeft: "20px"
     }
     // 設問の作成
-    var template_div = $('<div>').appendTo(target4).addClass('template_box');
+    var template_div = $('<div>').appendTo(target4).addClass('template_content');
     $('<p>').appendTo(template_div).text(json4.title).addClass('template_title');
     $('<p>').appendTo(template_div).text(json4.item01).addClass('template_itme');
     $('<p>').appendTo(template_div).text(json4.item02).addClass('template_itme');
