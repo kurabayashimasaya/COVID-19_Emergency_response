@@ -18,8 +18,10 @@
     var beforeId = params["beforeid"];
     var beforeNo = parseInt(params["questionno"]);
     var qNo = beforeNo + 1;
+    var f = params["f"];
+    var a = params["answer"];
     var o1 = json2[id];
-    createQuestion($('#' + o1.id),o1,qNo);
+    createQuestion($('#' + o1.id),o1,qNo,f,a);
     // バックの設定
     var linkElement = $('#backAnchorLink');
     var hrefStr = linkElement.attr('href');

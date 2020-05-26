@@ -46,7 +46,8 @@ function createQuestion(target2, json2, qNo) {
     $('<p>').appendTo(question_div).text(json2.list04).addClass('question_list_content');
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target2).addClass('button_box');
-    if (json2.id == "Q01") {
+    var firstParams = getReqParams();
+    if (firstParams.f == "1") {
       // YESボタンの作成
       var yes_button = $('<a>').appendTo(btn_box_div);
       yes_button.attr('id', json2.yes_id);
@@ -54,28 +55,6 @@ function createQuestion(target2, json2, qNo) {
       yes_button.text(json2.yes_content);
       yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
       // NOボタンの作成
-      var no_button = $('<a>').appendTo(btn_box_div);
-      no_button.attr('id', json2.no_id);
-      no_button.addClass('no_button');
-      no_button.text(json2.no_content);
-      no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
-    } else if (json2.id == "Q06_routea") {
-      var yes_button = $('<a>').appendTo(btn_box_div);
-      yes_button.attr('id', json2.yes_id);
-      yes_button.addClass('yes_button');
-      yes_button.text(json2.yes_content);
-      yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
-      var no_button = $('<a>').appendTo(btn_box_div);
-      no_button.attr('id', json2.no_id);
-      no_button.addClass('no_button');
-      no_button.text(json2.no_content);
-      no_button.attr('href', json2.no_button_href + "&questionno=" + qNo);
-    } else if (json2.id == "Q08_routeb") {
-      var yes_button = $('<a>').appendTo(btn_box_div);
-      yes_button.attr('id', json2.yes_id);
-      yes_button.addClass('yes_button');
-      yes_button.text(json2.yes_content);
-      yes_button.attr('href', json2.yes_button_href + "&questionno=" + qNo);
       var no_button = $('<a>').appendTo(btn_box_div);
       no_button.attr('id', json2.no_id);
       no_button.addClass('no_button');
@@ -129,30 +108,73 @@ function createResult(target3, json3) {
     routeb_link.attr('href', json3.href02);
     //選択した設問表示
     var result_div = $('<div>').appendTo(target3).addClass('list_item');
-    $('<p>').appendTo(result_div).text('選択した質問').addClass('result_heading02');
-    var param = getReqParams();
+    var table = $('<table>').appendTo(result_div).addClass('table');
+    table.attr('border', 1);
+    var tr01 = $('<tr>').appendTo(table);
+    $('<th>').appendTo(tr01).text('回答した質問');
+    $('<th>').appendTo(tr01).text('YES');
+    $('<th>').appendTo(tr01).text('NO');
 
-    if (param.q == "Q08_routeb") {
-      var route_b = param.q.split(',');
-      route_b.forEach(function(qId) {
-        json2.forEach(function(obj) {
-          if (obj.id == qId) {
-            console.log(obj.id + ":" + obj.content);
-            $('<p>').appendTo(result_div).text("Q08:" + obj.content).addClass('result_list_content01');
-          }
+    var paramAnswer = getReqParams();
+    var ls = paramAnswer.list.split(',');
+    var pA = paramAnswer.answer.split(',');
+    for (i = 0; i < pA.length; i++) {
+      var a = pA[i];
+      if (a == "yes") {
+        ls.forEach(function(qId) {
+          json2.forEach(function(obj) {
+            if (obj.id == qId) {
+              console.log(obj.id + ":" + obj.content);
+              var tr02 = $('<tr>').appendTo(table);
+              $('<td>').appendTo(tr02).text(obj.id);
+              $('<td>').appendTo(tr02).text(obj.content);
+            }
+          });
         });
-      });
-    } else {
-      var list = param.list.split(',');
+      } else if (a == "no") {
+        ls.forEach(function(qId) {
+          json2.forEach(function(obj) {
+            if (obj.id == qId) {
+              console.log(obj.id + ":" + obj.content);
+              var tr02 = $('<tr>').appendTo(table);
+              $('<td>').appendTo(tr02).text(" ");
+              $('<td>').appendTo(tr02).text(obj.id);
+              $('<td>').appendTo(tr02).text(obj.content);
+            }
+          });
+        });
+      } else {
+
+      }
+    }
+    return
+
+    /*if (param.answer == "yes") {
       list.forEach(function(qId) {
         json2.forEach(function(obj) {
           if (obj.id == qId) {
             console.log(obj.id + ":" + obj.content);
-            $('<p>').appendTo(result_div).text(obj.id + ":" + obj.content).addClass('result_list_content01');
+            var tr02 = $('<tr>').appendTo(table);
+            $('<td>').appendTo(tr02).text(obj.id);
+            $('<td>').appendTo(tr02).text(obj.content);
           }
         });
       });
-    }
+    } else if (param.answer == "no") {
+      list.forEach(function(qId) {
+        json2.forEach(function(obj) {
+          if (obj.id == qId) {
+            console.log(obj.id + ":" + obj.content);
+            var tr02 = $('<tr>').appendTo(table);
+            $('<td>').appendTo(tr02).text(" ");
+            $('<td>').appendTo(tr02).text(obj.id);
+            $('<td>').appendTo(tr02).text(obj.content);
+          }
+        });
+      });
+    } else {
+
+    }*/
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target3).addClass('button_box');
     // topに戻るボタンの作成

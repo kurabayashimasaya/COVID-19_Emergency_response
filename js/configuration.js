@@ -7,12 +7,12 @@ var json1 = [
       "list02" : "・現在発熱がある場合",
       "list03" : "",
       "routea_link" : "ルートAはこちら",
-      "href01" : "test.html?questionid=10&questionno=5",
+      "href01" : "test.html?questionid=10&questionno=5&f=1",
       "routeb_link" : "ルートBはこちら",
-      "href02" : "test.html?questionid=12&questionno=7",
+      "href02" : "test.html?questionid=12&questionno=7&f=1",
       "top_id" : "Q01",
       "next_content" : "診断開始",
-      "top_href" : "test.html?questionid=0&questionno=0"
+      "top_href" : "test.html?questionid=0&questionno=0&f=1"
   }
 ];
 
@@ -29,7 +29,7 @@ var json2 = [
         "yes_button_href" : "test.html?questionid=1&beforeid=0",
         "no_id" : "A01",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=0&list=Q01"
+        "no_button_href" : "result.html?resultid=0&list=Q01&answer=no"
     },
     {
         "id" : "Q02",
@@ -94,7 +94,7 @@ var json2 = [
         "yes_button_href" : "test.html?questionid=5&beforeid=4",
         "no_id" : "A04",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=3&list=Q01,Q02,Q03,Q04,Q05",
+        "no_button_href" : "result.html?resultid=3&list=Q01,Q02,Q03,Q04,Q05&answer=yes,yes,yes,yes,no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -111,7 +111,7 @@ var json2 = [
         "yes_button_href" : "test.html?questionid=6&beforeid=5",
         "no_id" : "A05",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=4&list=Q01,Q02,Q03,Q04,Q05,Q06",
+        "no_button_href" : "result.html?resultid=4&list=Q01,Q02,Q03,Q04,Q05,Q06&answer=yes,yes,yes,yes,yes,no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -125,10 +125,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A06",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=5&list=Q01,Q02,Q03,Q04,Q05,Q06,Q07",
+        "yes_button_href" : "result.html?resultid=5&list=Q01,Q02,Q03,Q04,Q05,Q06,Q07&answer=yes,yes,yes,yes,yes,yes,yes",
         "no_id" : "A05",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=4&list=Q01,Q02,Q03,Q04,Q05,Q06,Q07",
+        "no_button_href" : "result.html?resultid=4&list=Q01,Q02,Q03,Q04,Q05,Q06,Q07&answer=yes,yes,yes,yes,yes,yes,no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -142,10 +142,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03B",
+        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03B&answer=yes,no,yes",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03B",
+        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03B&answer=yes,no,no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -159,10 +159,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03,Q04B",
+        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03,Q04B&answer=yes,yes,no,yes",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03,Q04B",
+        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03,Q04B&answer=yes,yes,no,no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -176,10 +176,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03,Q04,Q05B",
+        "yes_button_href" : "result.html?resultid=1&list=Q01,Q02,Q03,Q04,Q05B&answer=yes,yes,yes,no,yes",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03,Q04,Q05B",
+        "no_button_href" : "result.html?resultid=2&list=Q01,Q02,Q03,Q04,Q05B&answer=yes,yes,yes,no,no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -197,7 +197,7 @@ var json2 = [
         "yes_button_href" : "test.html?questionid=11&beforeid=0",
         "no_id" : "A05",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=4&list=Q06",
+        "no_button_href" : "result.html?resultid=4&list=Q06&answer=no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -211,10 +211,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A06",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=5&list=Q06,Q07",
+        "yes_button_href" : "result.html?resultid=5&list=Q06,Q07&answer=yes,yes",
         "no_id" : "A05",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=4&list=Q06,Q07",
+        "no_button_href" : "result.html?resultid=4&list=Q06,Q07&answer=no,no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -228,10 +228,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "A02",
         "yes_content" : "YES",
-        "yes_button_href" : "result.html?resultid=1&q=Q08_routeb",
+        "yes_button_href" : "result.html?resultid=1&list=Q08_routeb&answer=yes",
         "no_id" : "A03",
         "no_content" : "NO",
-        "no_button_href" : "result.html?resultid=2&q=Q08_routeb",
+        "no_button_href" : "result.html?resultid=2&list=Q08_routeb&answer=no",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
