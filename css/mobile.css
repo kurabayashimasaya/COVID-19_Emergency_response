@@ -37,11 +37,11 @@
   }
   /*main*/
   .list_item {
-    background-color: #1212;
-    margin: 0 10% 0 10%;
+    margin: 0 15% 0 15%;
+    text-align: center;
   }
   .title {
-    font-size: 130%;
+    font-size: 150%;
     font-weight: bold;
     float: left;
   }
@@ -64,18 +64,19 @@
   .top_heading {
     margin: 2.0rem 2.0rem 2.0rem 2.5rem;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 140%;
     font-weight: bold;
   }
   .top_list_content {
     padding: 20px 20px 20px 100px;
+    text-align: left;
   }
   .top_link_content {
     margin-left: 50px;
   }
   .top_box {
     background-color: #FFFFFF;
-    width: 60%;
+    width: 50%;
     padding: 10px 0 10px 0;
     margin: 0 auto;
     margin-top: 30px;
@@ -103,16 +104,18 @@
   }
   /*質問画面*/
   .question_heasding {
-    margin: 30px 150px 30px 30px;
-    font-size: 120%;
+    text-align: center;
+    margin: 30px;
+    font-size: 140%;
     font-weight: bold;
   }
   .question_list_content {
-    margin: 1.0rem;
+    margin: 20px 50px 20px 150px;
+    text-align: left;
   }
   .question_box {
     background-color: #FFFFFF;
-    width: 60%;
+    width: 50%;
     padding: 10px 0 10px 0;
     margin: auto;
     margin-top: 30px;
@@ -170,26 +173,30 @@
     width: 100%;
   }
   table tr {
-    border-bottom: solid 1px #1212;
-    cursor: pointer;
+    border-bottom: solid 1px #4a4a4a;
   }
   table th {
-    text-align: center;
-    width: 25%;
-    padding: 10px 5px 10px 5px;
-  }
-  table td {
-    text-align: center;
-    width: 25%;
-    padding: 10px 5px 10px 5px
-  }
-  .result_heading01 {
-    margin: 5% 10% 0 10%;
+    text-align: left;
+    padding: 20px 5px 20px 5px;
     font-size: 120%;
     font-weight: bold;
   }
+  table td {
+    border-right: solid 1px #4a4a4a;
+    border-left: solid 1px #4a4a4a;
+    padding: 20px 5px 20px 5px
+  }
+  .table_box {
+    margin: 0 10% 0 10%;
+  }
+  .result_heading01 {
+    margin: 5% 10% 0 10%;
+    font-size: 140%;
+    font-weight: bold;
+  }
   .result_list_content01 {
-    margin: 30px 50px 30px 50px;
+    margin: 30px 50px 30px 100px;
+    text-align: left;
   }
   .result_heading02 {
     margin: 30px 50px 30px 50px;
@@ -202,7 +209,7 @@
   }
   .result_box {
     background-color: #FFFFFF;
-    width: 60%;
+    width: 50%;
     padding: 10px 0 10px 0;
     margin: auto;
     margin-top: 30px;
@@ -229,7 +236,7 @@
   .return_button:focus {
     outline: 2px #7cb7f7 solid;
   }
-  /*template*/
+  /*テンプレート報告画面*/
   .template_content {
     margin: 10%;
   }
@@ -247,6 +254,36 @@
     padding: 10px 0 10px 0;
     margin: auto;
     margin-top: 30px;
+  }
+  /*COVID-19_緊急タスク概要画面*/
+  .overview_content {
+    margin: 10%;
+  }
+  .overview_itme {
+    margin: 20px 10px 20px 10px;
+  }
+  .overview_box {
+    background-color: #FFFFFF;
+    width: 60%;
+    padding: 10px 0 10px 0;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .overview_title01 {
+    padding: 0 0 25px 0;
+    font-size: 140%;
+    font-weight: bold;
+  }
+  .overview_title02 {
+    padding: 15px 0 15px 0;
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .overview_title_red {
+    padding: 15px 0 15px 0;
+    color: red;
+    font-size: 120%;
+    font-weight: bold;
   }
  }
   @media screen and (max-width:479px) {
@@ -282,7 +319,6 @@
       float: left;
     }
     .list_item {
-      background-color: #1212;
       margin: 0 10% 0 10%;
     }
     .box_item {
@@ -402,6 +438,27 @@
       outline: 2px #7cb7f7 solid;
     }
     /*結果画面*/
+    table {
+      background-color: #ffffff;
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+    }
+    table tr {
+      border-bottom: solid 1px #1212;
+    }
+    table th {
+      padding: 20px 5px 20px 5px;
+      font-size: 120%;
+      font-weight: bold;
+    }
+    table td {
+      padding: 20px 5px 20px 5px
+    }
+    table th .table_list {
+      background-color: red;
+      padding: 0 40px 0 40px;
+    }
     .result_heading01 {
       margin: 3.0rem 1.0rem 1.0rem 1.5rem;
       font-size: 1.0rem;
@@ -466,5 +523,29 @@
       padding: 10px 0 10px 0;
       margin: auto;
       margin-top: 30px;
+    }
+    /*COVID-19_緊急タスク概要画面*/
+    .overview_content {
+      margin: 10%;
+    }
+    .overview_itme {
+      margin: 20px 10px 20px 10px;
+    }
+    .overview_box {
+      background-color: #FFFFFF;
+      width: 90%;
+      padding: 10px 0 10px 0;
+      margin: auto;
+      margin-top: 30px;
+    }
+    .overview_title01 {
+      padding: 0 0 25px 0;
+      font-size: 140%;
+      font-weight: bold;
+    }
+    .overview_title02 {
+      padding: 15px 0 15px 0;
+      font-size: 120%;
+      font-weight: bold;
     }
   }

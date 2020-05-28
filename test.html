@@ -25,7 +25,7 @@
     // バックの設定
     var linkElement = $('#backAnchorLink');
     var hrefStr = linkElement.attr('href');
-    var hrefStr = hrefStr + "?questionid=" + beforeId + "&beforeid=" + (beforeId - 1) + "&questionno=" + (beforeNo - 1);
+    var hrefStr = hrefStr + "?questionid=" + beforeId + "&beforeid=" + (beforeId - 1) + "&questionno=" + (beforeNo - 1) + "&f=" + (f - 1);
     linkElement.attr('href',hrefStr);
   });
 </script>
