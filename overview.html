@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+<title>COVID-19について</title>
+<link href="css/mobile.css" rel="stylesheet" type="text/css">
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/configuration.js"></script>
+<script src="js/commons.js"></script>
+<script src="js/parameter.js"></script>
+<script>
+// OnloadEventで発火
+window.onload = function() {
+  var o1 = json5[0];
+    createView($('#' + o1.id),o1);
+};
+</script>
+</head>
+<body id="wrapper">
+<header id="gheader">
+  <div class="inner">
+    <h1 id="logo">
+      <a href="./index.html">
+        <img src="./img/braveheartlog.jpg" alt="braveheartlog">
+      </a>
+    </h1>
+    <div class="header_title">
+      <p>『新型コロナウィルス感染症発症時及び感染疑い状況時』の判断</p>
+      <br>
+      <p>YES/NO フロー</p>
+    </div>
+  </div>
+</header>
+<div class="box_item">
+  <div class="overview_box">
+    <div id="view"></div>
+  </div>
+</div>
+</body>
+</html>

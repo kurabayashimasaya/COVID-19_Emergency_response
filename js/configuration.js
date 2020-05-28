@@ -1,4 +1,3 @@
-
 var json1 = [
   {
       "id" : "T00",
@@ -7,12 +6,12 @@ var json1 = [
       "list02" : "・現在発熱がある場合",
       "list03" : "",
       "routea_link" : "ルートAはこちら",
-      "href01" : "test.html?questionid=10&questionno=5&f=1",
+      "href01" : "test.html?questionid=10&questionno=5&f=0",
       "routeb_link" : "ルートBはこちら",
-      "href02" : "test.html?questionid=12&questionno=7&f=1",
+      "href02" : "test.html?questionid=12&questionno=7&f=0",
       "top_id" : "Q01",
       "next_content" : "診断開始",
-      "top_href" : "test.html?questionid=0&questionno=0&f=1"
+      "top_href" : "test.html?questionid=0&questionno=0&f=0"
   }
 ];
 
@@ -26,7 +25,7 @@ var json2 = [
         "list04" : "",
         "yes_id" : "Q02",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=1&beforeid=0",
+        "yes_button_href" : "test.html?questionid=1&beforeid=0&f=1",
         "no_id" : "A01",
         "no_content" : "NO",
         "no_button_href" : "result.html?resultid=0&list=Q01&answer=no"
@@ -40,10 +39,10 @@ var json2 = [
         "list04" : "・飲食・娯楽を共にする場面がある（あった）(友人等）",
         "yes_id" : "Q03",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=2&beforeid=1",
+        "yes_button_href" : "test.html?questionid=2&beforeid=1&f=2",
         "no_id" : "Q08A",
         "no_content" : "NO",
-        "no_button_href" : "test.html?questionid=7&beforeid=1",
+        "no_button_href" : "test.html?questionid=7&beforeid=1&f=2",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -57,10 +56,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "Q04",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=3&beforeid=2",
+        "yes_button_href" : "test.html?questionid=3&beforeid=2&f=3",
         "no_id" : "Q08B",
         "no_content" : "NO",
-        "no_button_href" : "test.html?questionid=8&beforeid=2",
+        "no_button_href" : "test.html?questionid=8&beforeid=2&f=3",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -74,10 +73,10 @@ var json2 = [
         "list04" : "",
         "yes_id" : "Q05",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=4&beforeid=3",
+        "yes_button_href" : "test.html?questionid=4&beforeid=3&f=4",
         "no_id" : "Q08C",
         "no_content" : "NO",
-        "no_button_href" : "test.html?questionid=9&beforeid=3",
+        "no_button_href" : "test.html?questionid=9&beforeid=3&f=4",
         "return_id" : "backAnchorLink",
         "return_content" : "return",
         "return_button_href" : "test.html"
@@ -91,7 +90,7 @@ var json2 = [
         "list04" : "",
         "yes_id" : "Q06",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=5&beforeid=4",
+        "yes_button_href" : "test.html?questionid=5&beforeid=4&f=5",
         "no_id" : "A04",
         "no_content" : "NO",
         "no_button_href" : "result.html?resultid=3&list=Q01,Q02,Q03,Q04,Q05&answer=yes,yes,yes,yes,no",
@@ -108,7 +107,7 @@ var json2 = [
         "list04" : "",
         "yes_id" : "Q07",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=6&beforeid=5",
+        "yes_button_href" : "test.html?questionid=6&beforeid=5&f=6",
         "no_id" : "A05",
         "no_content" : "NO",
         "no_button_href" : "result.html?resultid=4&list=Q01,Q02,Q03,Q04,Q05,Q06&answer=yes,yes,yes,yes,yes,no",
@@ -194,7 +193,7 @@ var json2 = [
         "list04" : "",
         "yes_id" : "Q07",
         "yes_content" : "YES",
-        "yes_button_href" : "test.html?questionid=11&beforeid=0",
+        "yes_button_href" : "test.html?questionid=11&beforeid=0&f=1",
         "no_id" : "A05",
         "no_content" : "NO",
         "no_button_href" : "result.html?resultid=4&list=Q06&answer=no",
@@ -248,8 +247,8 @@ var json3 = [
       "content03" : "",
       "list02" : "",
       "list03" : "",
-      "link_list" : "※1状況の報告についてはこちら",
-      "report_href" : "template.html",
+      "link_list" : "",
+      "report_href" : "",
       "exit_id" : "T00",
       "exit_content" : "topに戻る",
       "href" : "index.html"
@@ -367,6 +366,32 @@ var json4 = [
       "item14" : "⑩リモートワーク対応の可否（YES/NO）",
       "exit_id" : "T00",
       "exit_content" : "topに戻る",
+      "href" : "index.html"
+  }
+];
+var json5 = [
+  {
+      "id" : "view",
+      "title" : "初めに",
+      "content01" : "本フローは、株式会社ブレイブハートの従業員を対象とした、新型コロナウィルスの感染が発生または、疑わしい症状が発生した場合に行動を判断するガイドラインとして利用します。",
+      "item01" : "※ あくまでガイドラインであり、本フローに沿わない事態や状況に関しては、臨機応変な対応及び円滑なコミュニケーションで対応をお願いいたします。",
+      "item02" : "※ 国内での新型コロナウィルスに関する情報が錯綜し刻々と変化している状況です。事前通知なく内容が変更になる可能性があります。",
+      "item03" : "※ 本フローに関する問い合わせは、「management@brave-heart.co.jp」へご連絡お願いいたします。",
+      "content02" : "○情報統制に関する理解とお願い",
+      "item04" : "・いろいろなデマや憶測が錯綜する中で、不用意な発言による雇用機会の損失売り上げ低下が発生することで事業が維持できなくなる可能性が非常高いです。",
+      "item05" : "・今後の皆様の生活基盤維持にも大きくかかわってくる内容なので深刻に受け止めていただき、ご理解とご協力をお願いします。",
+      "content03" : "原則：感染に関する情報を一社員から発信しない。",
+      "item06" : "・然るべき責任部門から正式にお客様へ告知することを第一に考えてください。",
+      "content04" : "○影響範囲",
+      "li01" : "１．会社間の信頼関係",
+      "item07" : "・一社員からの情報漏洩による企業イメージのマイナス",
+      "item08" : "・非感染者の感染疑いによる出勤停止、休暇強要、契約解消の可能性",
+      "li02" : "２．誤情報によるパニック",
+      "item09" : "・会社責任部門以外からの社内外へ向けての情報発信で不安を煽る可能性",
+      "li03" : "３．コロナハラスメント被害",
+      "item10" : "・非感染者であるのに、花粉症や風邪症状に起因する咳・くしゃみで新型コロナウィルス感染者として扱われる可能性",
+      "exit_id" : "T00",
+      "exit_content" : "YES/NOフローに進む",
       "href" : "index.html"
   }
 ];

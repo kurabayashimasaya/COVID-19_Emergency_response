@@ -1,3 +1,4 @@
+
 /**
  * topの設問のHTMLを作成する
  * @param {*} target1 対象となる要素
@@ -47,7 +48,7 @@ function createQuestion(target2, json2, qNo) {
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target2).addClass('button_box');
     var firstParams = getReqParams();
-    if (firstParams.f == "1") {
+    if (firstParams.f == '0') {
       // YESボタンの作成
       var yes_button = $('<a>').appendTo(btn_box_div);
       yes_button.attr('id', json2.yes_id);
@@ -107,48 +108,41 @@ function createResult(target3, json3) {
     routeb_link.text(json3.routeb_link).addClass('result_list_content02');
     routeb_link.attr('href', json3.href02);
     //選択した設問表示
-    var result_div = $('<div>').appendTo(target3).addClass('list_item');
-    var table = $('<table>').appendTo(result_div).addClass('table');
-    table.attr('border', 1);
-    var tr01 = $('<tr>').appendTo(table);
-    $('<th>').appendTo(tr01).text('回答した質問');
-    $('<th>').appendTo(tr01).text('YES');
-    $('<th>').appendTo(tr01).text('NO');
+    var result_div = $('<div>').appendTo(target3).addClass('table_box');
+    var table01 = $('<table>').appendTo(result_div);
+    var tr01 = $('<tr>').appendTo(table01);
+    $('<th>').appendTo(tr01).text('選択した質問・回答');
+    var table02 = $('<table>').appendTo(result_div);
 
     var paramAnswer = getReqParams();
     var ls = paramAnswer.list.split(',');
     var pA = paramAnswer.answer.split(',');
     for (i = 0; i < pA.length; i++) {
       var a = pA[i];
-      if (a == "yes") {
-        ls.forEach(function(qId) {
-          json2.forEach(function(obj) {
-            if (obj.id == qId) {
-              console.log(obj.id + ":" + obj.content);
-              var tr02 = $('<tr>').appendTo(table);
-              $('<td>').appendTo(tr02).text(obj.id);
-              $('<td>').appendTo(tr02).text(obj.content);
-            }
-          });
-        });
-      } else if (a == "no") {
-        ls.forEach(function(qId) {
-          json2.forEach(function(obj) {
-            if (obj.id == qId) {
-              console.log(obj.id + ":" + obj.content);
-              var tr02 = $('<tr>').appendTo(table);
-              $('<td>').appendTo(tr02).text(" ");
-              $('<td>').appendTo(tr02).text(obj.id);
-              $('<td>').appendTo(tr02).text(obj.content);
-            }
-          });
-        });
-      } else {
-
+      var qid = ls[i];
+      json2.forEach((obj) => {
+        if (obj.id == qid) {
+          q_obj = obj;
+          //break;
+        }
+      });
+      switch (a) {
+        case 'yes':
+          var tr02 = $('<tr>').appendTo(table02);
+          $('<td>').appendTo(tr02).text(q_obj.id).css('text-align', 'center');
+          $('<td>').appendTo(tr02).text(q_obj.content);
+          $('<td>').appendTo(tr02).text('YES').css('text-align', 'center');
+          break;
+        case 'no':
+          var tr02 = $('<tr>').appendTo(table02);
+          $('<td>').appendTo(tr02).text(q_obj.id).css('text-align', 'center');
+          $('<td>').appendTo(tr02).text(q_obj.content);
+          $('<td>').appendTo(tr02).text('NO').css('text-align', 'center');
+          break;
+        default:
+          break;
       }
     }
-    return
-
     /*if (param.answer == "yes") {
       list.forEach(function(qId) {
         json2.forEach(function(obj) {
@@ -238,6 +232,41 @@ function createTemplate(target4, json4) {
     exit_button.addClass('start_button');
     exit_button.text(json4.exit_content);
     exit_button.attr('href', json4.href);
+}
+
+/**
+ * 設問のHTMLを作成する
+ * @param {*} target5 対象となる要素
+ * @param {*} json5 コンテンツ情報
+ */
+function createView(target5, json5) {
+    var view_div = $('<div>').appendTo(target5).addClass('overview_content');
+    $('<p>').appendTo(view_div).text(json5.title).addClass('overview_title01');
+    $('<p>').appendTo(view_div).text(json5.content01).addClass('overview_title02');
+    $('<p>').appendTo(view_div).text(json5.item01).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.item02).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.item03).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.content02).addClass('overview_title02');
+    $('<p>').appendTo(view_div).text(json5.item04).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.item05).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.content03).addClass('overview_title_red');
+    $('<p>').appendTo(view_div).text(json5.item06).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.content04).addClass('overview_title02');
+    $('<p>').appendTo(view_div).text(json5.li01).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.item07).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.item08).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.li02).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.item09).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.li03).addClass('overview_itme');
+    $('<p>').appendTo(view_div).text(json5.item10).addClass('overview_itme');
+    // ボタンBOXの作成
+    var btn_box_div = $('<div>').appendTo(target5).addClass('button_box');
+    // topに戻るボタンの作成
+    var exit_button = $('<a>').appendTo(btn_box_div);
+    exit_button.attr('id', json5.exit_id);
+    exit_button.addClass('start_button');
+    exit_button.text(json5.exit_content);
+    exit_button.attr('href', json5.href);
 }
 
 /**
