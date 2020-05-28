@@ -184,6 +184,10 @@
     border-left: solid 1px #4a4a4a;
     padding: 20px 5px 20px 5px
   }
+  .table_list {
+    text-align: center;
+    padding: 0 20px 0 20px;
+  }
   .table_box {
     margin: 0 10% 0 10%;
   }
@@ -312,9 +316,10 @@
     }
     /*main*/
     .title {
-      font-size: 130%;
+      padding: 30px 0 10px 0;
+      font-size: 150%;
       font-weight: bold;
-      float: left;
+      text-align: center;
     }
     .list_item {
       margin: 0 10% 0 10%;
@@ -336,7 +341,7 @@
       margin: 20px 20px 20px 0;
     }
     .top_heading {
-      margin: 2.0rem 2.0rem 2.0rem 2.5rem;
+      margin: 2.0rem 0 2.0rem 0;
       font-size: 1.2rem;
       font-weight: bold;
     }
@@ -348,7 +353,7 @@
     }
     .top_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: 0 auto;
       margin-top: 30px;
@@ -376,7 +381,7 @@
     }
     /*質問画面*/
     .question_heasding {
-      margin: 3.0rem 1.0rem 1.0rem 1.5rem;
+      margin: 1.0rem 1.0rem 1.0rem 1.5rem;
       font-size: 1.0rem;
       font-weight: bold;
     }
@@ -385,7 +390,7 @@
     }
     .question_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: auto;
       margin-top: 30px;
@@ -443,7 +448,7 @@
       width: 100%;
     }
     table tr {
-      border-bottom: solid 1px #1212;
+      border-bottom: solid 1px #c4c4c4;
     }
     table th {
       padding: 20px 5px 20px 5px;
@@ -451,11 +456,17 @@
       font-weight: bold;
     }
     table td {
-      padding: 20px 5px 20px 5px
+      padding: 20px 5px 20px 5px;
     }
-    table th .table_list {
-      background-color: red;
-      padding: 0 40px 0 40px;
+    .table_list {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 0 0.7rem 0 0.7rem;
+    }
+    .table_middle {
+      background-color: #ffffff;
+      border-right: solid 1px #c4c4c4;
+      border-left: solid 1px #c4c4c4;
     }
     .result_heading01 {
       margin: 3.0rem 1.0rem 1.0rem 1.5rem;
@@ -476,7 +487,7 @@
     }
     .result_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: auto;
       margin-top: 30px;
@@ -508,7 +519,6 @@
       margin: 10%;
     }
     .template_title {
-      margin: 15px 0 15px 0;
       font-size: 120%;
       font-weight: bold;
     }
@@ -517,7 +527,7 @@
     }
     .template_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: auto;
       margin-top: 30px;

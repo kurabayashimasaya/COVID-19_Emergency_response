@@ -115,11 +115,9 @@ function createResult(target3, json3) {
     var tr01 = $('<tr>').appendTo(table01);
     $('<th>').appendTo(tr01).text('選択した質問・回答');
     var table02 = $('<table>').appendTo(result_div);
-
     var paramAnswer = getReqParams();
     var ls = paramAnswer.list.split(',');
     var pA = paramAnswer.answer.split(',');
-    if ()
     for (i = 0; i < pA.length; i++) {
       var a = pA[i];
       var qid = ls[i];
@@ -131,23 +129,32 @@ function createResult(target3, json3) {
       });
       switch (a) {
         case 'yes':
-        if (obj.id == "Q01_a") {
+        if (paramAnswer.re == "1") {
+          var regex = /_([a-z0-9])*$/i;
           var tr02 = $('<tr>').appendTo(table02);
-          $('<td>').appendTo(tr02).text(q_obj.id).css('text-align', 'center');
-          $('<td>').appendTo(tr02).text(q_obj.content);
-          $('<td>').appendTo(tr02).text('YES').css('text-align', 'center');
+          $('<td>').appendTo(tr02).text(qid.replace(regex, '')).addClass('table_list');
+          $('<td>').appendTo(tr02).text(q_obj.content).addClass('table_middle');
+          $('<td>').appendTo(tr02).text('YES').addClass('table_list');
         } else {
           var tr02 = $('<tr>').appendTo(table02);
-          $('<td>').appendTo(tr02).text(q_obj.id).css('text-align', 'center');
-          $('<td>').appendTo(tr02).text(q_obj.content);
-          $('<td>').appendTo(tr02).text('YES').css('text-align', 'center');
+          $('<td>').appendTo(tr02).text(q_obj.id).addClass('table_list');
+          $('<td>').appendTo(tr02).text(q_obj.content).addClass('table_middle');
+          $('<td>').appendTo(tr02).text('YES').addClass('table_list');
         }
           break;
         case 'no':
+        if (paramAnswer.re == "1") {
+          var regex = /_([a-z0-9])*$/i;
           var tr02 = $('<tr>').appendTo(table02);
-          $('<td>').appendTo(tr02).text(q_obj.id).css('text-align', 'center');
-          $('<td>').appendTo(tr02).text(q_obj.content);
-          $('<td>').appendTo(tr02).text('NO').css('text-align', 'center');
+          $('<td>').appendTo(tr02).text(qid.replace(regex, '')).addClass('table_list');
+          $('<td>').appendTo(tr02).text(q_obj.content).addClass('table_middle');
+          $('<td>').appendTo(tr02).text('NO').addClass('table_list');
+        } else {
+          var tr02 = $('<tr>').appendTo(table02);
+          $('<td>').appendTo(tr02).text(q_obj.id).addClass('table_list');
+          $('<td>').appendTo(tr02).text(q_obj.content).addClass('table_middle');
+          $('<td>').appendTo(tr02).text('NO').addClass('table_list');
+        }
           break;
         default:
           break;
