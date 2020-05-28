@@ -38,12 +38,14 @@
   /*main*/
   .list_item {
     margin: 0 15% 0 15%;
-    text-align: center;
   }
   .title {
-    font-size: 150%;
+    padding: 30px 0 10px 0;
+    font-size: 180%;
     font-weight: bold;
-    float: left;
+    text-align: center;
+  }
+  .title_box {
   }
   .box_item {
     margin: 30px 0 30px 0;
@@ -63,20 +65,18 @@
   }
   .top_heading {
     margin: 2.0rem 2.0rem 2.0rem 2.5rem;
-    text-align: center;
     font-size: 140%;
     font-weight: bold;
   }
   .top_list_content {
     padding: 20px 20px 20px 100px;
-    text-align: left;
   }
   .top_link_content {
     margin-left: 50px;
   }
   .top_box {
     background-color: #FFFFFF;
-    width: 50%;
+    width: 70%;
     padding: 10px 0 10px 0;
     margin: 0 auto;
     margin-top: 30px;
@@ -104,18 +104,16 @@
   }
   /*質問画面*/
   .question_heasding {
-    text-align: center;
     margin: 30px;
     font-size: 140%;
     font-weight: bold;
   }
   .question_list_content {
-    margin: 20px 50px 20px 150px;
-    text-align: left;
+    margin: 20px 50px 20px 50px;
   }
   .question_box {
     background-color: #FFFFFF;
-    width: 50%;
+    width: 70%;
     padding: 10px 0 10px 0;
     margin: auto;
     margin-top: 30px;
@@ -204,12 +202,12 @@
     font-weight: bold;
   }
   .result_list_content02 {
-    margin: 30px 50px 30px 50px;
+    margin: 30px 50px 30px 100px;
     display: block;
   }
   .result_box {
     background-color: #FFFFFF;
-    width: 50%;
+    width: 70%;
     padding: 10px 0 10px 0;
     margin: auto;
     margin-top: 30px;
