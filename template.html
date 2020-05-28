@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+<title>報告テンプレートについて</title>
+<link href="css/mobile.css" rel="stylesheet" type="text/css">
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/configuration.js"></script>
+<script src="js/commons.js"></script>
+<script src="js/parameter.js"></script>
+<script>
+// OnloadEventで発火
+window.onload = function() {
+  var o1 = json4[0];
+    createTemplate($('#' + o1.id),o1);
+};
+</script>
+</head>
+<body id="wrapper">
+<header id="gheader">
+  <div class="inner">
+    <h1 id="logo">
+      <a href="./index.html">
+        <img src="./img/braveheartlog.jpg" alt="braveheartlog">
+      </a>
+    </h1>
+    <div class="header_title">
+      <p>『新型コロナウィルス感染症発症時及び感染疑い状況時』の判断</p>
+      <br>
+      <p>YES/NO フロー</p>
+    </div>
+  </div>
+</header>
+<div class="box_item">
+  <div class="template_box">
+    <div id="tmp">
+      <!--<p class="template_title">※１：報告のテンプレートについて</p>
+      <p class="template_itme">・フローの随所に報告を必要とする場面があります。その報告には以下の事項を含めて報告をお願いします。</p>
+      <p class="template_itme">※自身をはじめとする、社員・ご家族の命を守る活動として認識し、迅速なご対応をお願いいたします。</p>
+      <p class="template_itme">・TO: <a href="mailto:sales@brave-heart.co.jp">sales@brave-heart.co.jp;</a></p>
+      <p class="template_itme">・CC: <a href="mailto:imi@brave-heart.co.jp">imi@brave-heart.co.jp;</a> <a href="mailto:hiratsuka@brave-heart.co.jp">hiratsuka@brave-heart.co.jp;</a>  所属チームリーダー</p>
+      <p class="template_itme">・件名：【報告】新型コロナウィルス感染症 判断フロー 報告_氏名_YYYYMMDD</p>
+      <p class="template_itme">①４日間以上続く37.5℃以上の発熱がある（YES/NO）</p>
+      <p class="template_itme">②1週間以上続く、咳、くしゃみの症状がある（YES/NO）</p>
+      <p class="template_itme">③強い全身のだるさ、呼吸がしにくい息苦しさ、味覚障害がある（YES/NO）</p>
+      <p class="template_itme">④感染者（疑いを含む）との関係性（現場社員、家族、友人、ほか）</p>
+      <p class="template_itme">⑤感染者（疑いを含む）発生報告を受けた日からさかのぼって14日以内に接触した社内メンバーの報告</p>
+      <p class="template_itme">⑥現場責任者からの指示情報連携</p>
+      <p class="template_itme">⑦上位会社等の現場外からの情報である（YES/NO）</p>
+      <p class="template_itme">⑧現時点のアローアンス下限値を下回る可能性（YES/NO）</p>
+      <p class="template_itme">⑨現場の新型コロナウィルスに対応する進捗状況説明報</p>
+      <p class="template_itme">⑩リモートワーク対応の可否（YES/NO）</p>
+    </div>-->
+    <div>
+  </div>
+</div>
+</body>
+</html>

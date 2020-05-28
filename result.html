@@ -2,9 +2,9 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
 <title>結果画面</title>
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/mobile.css" rel="stylesheet" type="text/css">
 <link href="css/reset.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/configuration.js"></script>
@@ -18,33 +18,26 @@ $(function () {
   var beforeId = params["beforeid"];
   var o1 = json3[id];
   createResult($('#' + o1.id),o1);
-  if (select == 2) {
-    console.log(!true);　
-  } else {
-    console.log(!false);
-  }
 });
 </script>
 </head>
 <body id="wrapper">
-</head>
-<body id="wrapper">
 <header id="gheader">
-  <div class="inner clear">
+  <div class="inner">
     <h1 id="logo">
       <a href="./index.html">
-        <img src="./img/ブレイブハート&ロゴ.jpg" alt="ブレイブハート&ロゴ">
+        <img src="./img/braveheartlog.jpg" alt="braveheartlog">
       </a>
     </h1>
-  </div>
-  <div class="header_title">
-    <p>『新型コロナウィルス感染症発症時及び感染疑い状況時』の判断</p>
-    <br>
-    <p>YES/NO フロー</p>
+    <div class="header_title">
+      <p>『新型コロナウィルス感染症発症時及び感染疑い状況時』の判断</p>
+      <br>
+      <p>YES/NO フロー</p>
+    </div>
   </div>
 </header>
 <div class="box_item">
-  <div class="first_question">
+  <div class="result_box">
     <div id="A01"></div>
     <div id="A02"></div>
     <div id="A03"></div>
