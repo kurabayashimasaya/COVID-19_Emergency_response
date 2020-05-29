@@ -343,7 +343,7 @@ var json4 = [
       "item02" : "※自身をはじめとする、社員・ご家族の命を守る活動として認識し、迅速なご対応をお願いいたします。",
       "item_to" : "・TO:",
       "id01" : "to01",
-      "href_mail" : "mailto:sales@brave-heart.co.jp?subject=【報告】新型コロナウイルス感染症判断フロー報告_氏名_YYYYMMDD&amp;&cc=imai@brave-heart.co.jp,hiratsuka@brave-heart.co.jp",
+      "href_mail" : "mailto:sales@brave-heart.co.jp?subject=【報告】新型コロナウイルス感染症判断フロー報告_氏名_YYYYMMDD&amp;&body=※CCに所属のチームリーダーを追加してください。&amp;&&cc=imai@brave-heart.co.jp,hiratsuka@brave-heart.co.jp",
       "item_mail01" : "sales@brave-heart.co.jp;",
       "item_cc" : "・CC:",
       "id02" : "cc01",
