@@ -38,12 +38,14 @@
   /*main*/
   .list_item {
     margin: 0 15% 0 15%;
-    text-align: center;
   }
   .title {
-    font-size: 150%;
+    padding: 30px 0 10px 0;
+    font-size: 180%;
     font-weight: bold;
-    float: left;
+    text-align: center;
+  }
+  .title_box {
   }
   .box_item {
     margin: 30px 0 30px 0;
@@ -63,20 +65,18 @@
   }
   .top_heading {
     margin: 2.0rem 2.0rem 2.0rem 2.5rem;
-    text-align: center;
     font-size: 140%;
     font-weight: bold;
   }
   .top_list_content {
     padding: 20px 20px 20px 100px;
-    text-align: left;
   }
   .top_link_content {
     margin-left: 50px;
   }
   .top_box {
     background-color: #FFFFFF;
-    width: 50%;
+    width: 70%;
     padding: 10px 0 10px 0;
     margin: 0 auto;
     margin-top: 30px;
@@ -104,18 +104,16 @@
   }
   /*質問画面*/
   .question_heasding {
-    text-align: center;
     margin: 30px;
     font-size: 140%;
     font-weight: bold;
   }
   .question_list_content {
-    margin: 20px 50px 20px 150px;
-    text-align: left;
+    margin: 20px 50px 20px 50px;
   }
   .question_box {
     background-color: #FFFFFF;
-    width: 50%;
+    width: 70%;
     padding: 10px 0 10px 0;
     margin: auto;
     margin-top: 30px;
@@ -186,6 +184,10 @@
     border-left: solid 1px #4a4a4a;
     padding: 20px 5px 20px 5px
   }
+  .table_list {
+    text-align: center;
+    padding: 0 20px 0 20px;
+  }
   .table_box {
     margin: 0 10% 0 10%;
   }
@@ -204,12 +206,12 @@
     font-weight: bold;
   }
   .result_list_content02 {
-    margin: 30px 50px 30px 50px;
+    margin: 30px 50px 30px 100px;
     display: block;
   }
   .result_box {
     background-color: #FFFFFF;
-    width: 50%;
+    width: 70%;
     padding: 10px 0 10px 0;
     margin: auto;
     margin-top: 30px;
@@ -270,8 +272,9 @@
     margin-top: 30px;
   }
   .overview_title01 {
-    padding: 0 0 25px 0;
-    font-size: 140%;
+    padding: 0 0 30px 0;
+    text-align: center;
+    font-size: 160%;
     font-weight: bold;
   }
   .overview_title02 {
@@ -314,9 +317,10 @@
     }
     /*main*/
     .title {
-      font-size: 130%;
+      padding: 30px 0 10px 0;
+      font-size: 150%;
       font-weight: bold;
-      float: left;
+      text-align: center;
     }
     .list_item {
       margin: 0 10% 0 10%;
@@ -338,7 +342,7 @@
       margin: 20px 20px 20px 0;
     }
     .top_heading {
-      margin: 2.0rem 2.0rem 2.0rem 2.5rem;
+      margin: 2.0rem 0 2.0rem 0;
       font-size: 1.2rem;
       font-weight: bold;
     }
@@ -346,11 +350,11 @@
       margin: 1.0rem 1.0rem 2.0rem 1.5rem;
     }
     .top_link_content {
-      margin-left: 1.5rem;
+      margin-left: 1.0rem;
     }
     .top_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: 0 auto;
       margin-top: 30px;
@@ -358,7 +362,7 @@
     .start_button {
       position: relative;
       display: inline-block;
-      padding: 20px;
+      padding: 1.10em 1.0em 1.0em 1.0em;
       text-decoration: none;
       text-align:center;
       color: #FFF;
@@ -367,7 +371,7 @@
       border-radius: 4px;
       box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
       font-weight: bold;
-      font-size: 120%;
+      font-size: 100%;
     }
     .start_button:active {
       border-bottom: solid 2px #526ffa;
@@ -378,7 +382,7 @@
     }
     /*質問画面*/
     .question_heasding {
-      margin: 3.0rem 1.0rem 1.0rem 1.5rem;
+      margin: 1.0rem 1.0rem 1.0rem 1.5rem;
       font-size: 1.0rem;
       font-weight: bold;
     }
@@ -387,17 +391,17 @@
     }
     .question_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: auto;
       margin-top: 30px;
     }
     .yes_button {
-      width: 95px;
+      width: 70px;
       margin-right: 50px;
       position: relative;
       display: inline-block;
-      padding: 0.50em 0.5em;
+      padding: 0.65em 0.5em 0.5em 0.5em;
       text-decoration: none;
       text-align:center;
       color: #FFF;
@@ -416,10 +420,10 @@
       outline: 2px #7cb7f7 solid;
     }
     .no_button {
-      width: 95px;
+      width: 70px;
       position: relative;
       display: inline-block;
-      padding: 0.50em 0.5em;
+      padding: 0.65em 0.5em 0.5em 0.5em;
       text-decoration: none;
       text-align:center;
       color: #FFF;
@@ -445,7 +449,7 @@
       width: 100%;
     }
     table tr {
-      border-bottom: solid 1px #1212;
+      border-bottom: solid 1px #c4c4c4;
     }
     table th {
       padding: 20px 5px 20px 5px;
@@ -453,11 +457,17 @@
       font-weight: bold;
     }
     table td {
-      padding: 20px 5px 20px 5px
+      padding: 20px 5px 20px 5px;
     }
-    table th .table_list {
-      background-color: red;
-      padding: 0 40px 0 40px;
+    .table_list {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 0 0.7rem 0 0.7rem;
+    }
+    .table_middle {
+      background-color: #ffffff;
+      border-right: solid 1px #c4c4c4;
+      border-left: solid 1px #c4c4c4;
     }
     .result_heading01 {
       margin: 3.0rem 1.0rem 1.0rem 1.5rem;
@@ -478,7 +488,7 @@
     }
     .result_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: auto;
       margin-top: 30px;
@@ -510,7 +520,6 @@
       margin: 10%;
     }
     .template_title {
-      margin: 15px 0 15px 0;
       font-size: 120%;
       font-weight: bold;
     }
@@ -519,7 +528,7 @@
     }
     .template_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: auto;
       margin-top: 30px;
@@ -539,12 +548,19 @@
       margin-top: 30px;
     }
     .overview_title01 {
-      padding: 0 0 25px 0;
+      padding: 0 0 30px 0;
       font-size: 140%;
       font-weight: bold;
+      text-align: center;
     }
     .overview_title02 {
       padding: 15px 0 15px 0;
+      font-size: 120%;
+      font-weight: bold;
+    }
+    .overview_title_red {
+      padding: 15px 0 15px 0;
+      color: red;
       font-size: 120%;
       font-weight: bold;
     }

@@ -36,10 +36,11 @@ function createTop(target1, json1) {
  */
 function createQuestion(target2, json2, qNo) {
     // タイトルの作
+    var title_div = $('<div>').appendTo(target2).addClass('title_box');
+        question = "Q0" + qNo;
+    $('<p>').appendTo(title_div).text(question).addClass('title');
     // 設問の作成
     var question_div = $('<div>').appendTo(target2).addClass('list_item');
-    question = "Q0" + qNo + ".";
-    $('<p>').appendTo(question_div).text(question).addClass('title');
     $('<p>').appendTo(question_div).text(json2.content).addClass('question_heasding');
     $('<p>').appendTo(question_div).text(json2.list01).addClass('question_list_content clear');
     $('<p>').appendTo(question_div).text(json2.list02).addClass('question_list_content');
@@ -89,7 +90,8 @@ function createQuestion(target2, json2, qNo) {
 function createResult(target3, json3) {
     var question_div = $('<div>').appendTo(target3).addClass('list_item');
     // 設問の作成
-    $('<p>').appendTo(question_div).text(json3.title).addClass('title');
+    var title_div = $('<div>').appendTo(question_div).addClass('title_box');
+    $('<p>').appendTo(title_div).text(json3.title).addClass('title');
     $('<p>').appendTo(question_div).text(json3.content01).addClass('result_heading01');
     $('<p>').appendTo(question_div).text(json3.content02).addClass('result_heading01');
     $('<p>').appendTo(question_div).text(json3.list01).addClass('result_list_content01 clear');
@@ -113,7 +115,6 @@ function createResult(target3, json3) {
     var tr01 = $('<tr>').appendTo(table01);
     $('<th>').appendTo(tr01).text('選択した質問・回答');
     var table02 = $('<table>').appendTo(result_div);
-
     var paramAnswer = getReqParams();
     var ls = paramAnswer.list.split(',');
     var pA = paramAnswer.answer.split(',');
@@ -128,16 +129,32 @@ function createResult(target3, json3) {
       });
       switch (a) {
         case 'yes':
+        if (paramAnswer.re == "1") {
+          var regex = /_([a-z0-9])*$/i;
           var tr02 = $('<tr>').appendTo(table02);
-          $('<td>').appendTo(tr02).text(q_obj.id).css('text-align', 'center');
-          $('<td>').appendTo(tr02).text(q_obj.content);
-          $('<td>').appendTo(tr02).text('YES').css('text-align', 'center');
+          $('<td>').appendTo(tr02).text(qid.replace(regex, '')).addClass('table_list');
+          $('<td>').appendTo(tr02).text(q_obj.content).addClass('table_middle');
+          $('<td>').appendTo(tr02).text('YES').addClass('table_list');
+        } else {
+          var tr02 = $('<tr>').appendTo(table02);
+          $('<td>').appendTo(tr02).text(q_obj.id).addClass('table_list');
+          $('<td>').appendTo(tr02).text(q_obj.content).addClass('table_middle');
+          $('<td>').appendTo(tr02).text('YES').addClass('table_list');
+        }
           break;
         case 'no':
+        if (paramAnswer.re == "1") {
+          var regex = /_([a-z0-9])*$/i;
           var tr02 = $('<tr>').appendTo(table02);
-          $('<td>').appendTo(tr02).text(q_obj.id).css('text-align', 'center');
-          $('<td>').appendTo(tr02).text(q_obj.content);
-          $('<td>').appendTo(tr02).text('NO').css('text-align', 'center');
+          $('<td>').appendTo(tr02).text(qid.replace(regex, '')).addClass('table_list');
+          $('<td>').appendTo(tr02).text(q_obj.content).addClass('table_middle');
+          $('<td>').appendTo(tr02).text('NO').addClass('table_list');
+        } else {
+          var tr02 = $('<tr>').appendTo(table02);
+          $('<td>').appendTo(tr02).text(q_obj.id).addClass('table_list');
+          $('<td>').appendTo(tr02).text(q_obj.content).addClass('table_middle');
+          $('<td>').appendTo(tr02).text('NO').addClass('table_list');
+        }
           break;
         default:
           break;
@@ -197,19 +214,19 @@ function createTemplate(target4, json4) {
     var mail_link01 = $('<a>').appendTo(template_div);
     mail_link01.attr('id', json4.to01);
     mail_link01.text(json4.item_mail01);
-    mail_link01.attr('href', json4.href_to01);
+    mail_link01.attr('href', json4.href_mail);
     mail_link01.css(template_css);
     $('<p>').appendTo(template_div).text(json4.item_cc).addClass('template_itme');
     var mail_link02 = $('<a>').appendTo(template_div);
     mail_link02.attr('id', json4.cc01);
     mail_link02.text(json4.item_mail02);
-    mail_link02.attr('href', json4.href_cc01);
+    mail_link02.attr('href', json4.href_mail);
     mail_link02.css(template_css);
     $('<br>').appendTo(template_div);
     var mail_link03 = $('<a>').appendTo(template_div);
     mail_link03.attr('id', json4.cc02);
     mail_link03.text(json4.item_mail03);
-    mail_link03.attr('href', json4.href_cc02);
+    mail_link03.attr('href', json4.href_mail);
     mail_link03.css(template_css);
     $('<br>').appendTo(template_div);
     $('<span>').appendTo(template_div).text(json4.item03).css(template_css);
@@ -224,6 +241,7 @@ function createTemplate(target4, json4) {
     $('<p>').appendTo(template_div).text(json4.item12).addClass('template_itme');
     $('<p>').appendTo(template_div).text(json4.item13).addClass('template_itme');
     $('<p>').appendTo(template_div).text(json4.item14).addClass('template_itme');
+    $('<p>').appendTo(template_div).text(json4.item15).addClass('template_itme');
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target4).addClass('button_box');
     // topに戻るボタンの作成
