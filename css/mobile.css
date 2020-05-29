@@ -289,7 +289,7 @@
     font-weight: bold;
   }
  }
-  @media screen and (max-width:479px) {
+  @media screen and (max-width:469px) {
     /*header*/
     #gheader {
       background-color: #FFFFFF;
@@ -323,7 +323,7 @@
       text-align: center;
     }
     .list_item {
-      margin: 0 10% 0 10%;
+      margin: 0 6% 0 6%;
     }
     .box_item {
       margin: 30px 0 30px 0;
@@ -475,7 +475,7 @@
       font-weight: bold;
     }
     .result_list_content01 {
-      margin: 2.0rem 1.5rem 1.0rem 1.5rem;
+      margin: 2.0rem 1.0rem 1.0rem 1.0rem;
     }
     .result_heading02 {
       margin: 2.0rem 1.5rem 1.0rem 1.5rem;
@@ -517,7 +517,7 @@
     }
     /*template*/
     .template_content {
-      margin: 10%;
+      margin: 7%;
     }
     .template_title {
       font-size: 120%;
@@ -535,14 +535,14 @@
     }
     /*COVID-19_緊急タスク概要画面*/
     .overview_content {
-      margin: 10%;
+      margin: 7%;
     }
     .overview_itme {
       margin: 20px 10px 20px 10px;
     }
     .overview_box {
       background-color: #FFFFFF;
-      width: 90%;
+      width: 95%;
       padding: 10px 0 10px 0;
       margin: auto;
       margin-top: 30px;
