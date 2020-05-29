@@ -241,6 +241,7 @@ function createTemplate(target4, json4) {
     $('<p>').appendTo(template_div).text(json4.item12).addClass('template_itme');
     $('<p>').appendTo(template_div).text(json4.item13).addClass('template_itme');
     $('<p>').appendTo(template_div).text(json4.item14).addClass('template_itme');
+    $('<p>').appendTo(template_div).text(json4.item15).addClass('template_itme');
     // ボタンBOXの作成
     var btn_box_div = $('<div>').appendTo(target4).addClass('button_box');
     // topに戻るボタンの作成
