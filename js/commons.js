@@ -21,12 +21,12 @@ function createTop(target1, json1) {
     top_button.attr('href', json1.top_href);
     //報告テンプレートリンク
     var route_div = $('<div>').appendTo(target1).addClass('top_item');
-    var routea_link = $('<a>').appendTo(route_div);
-    routea_link.text(json1.routea_link).addClass('top_link_content');
-    routea_link.attr('href', json1.href01);
-    var routeb_link = $('<a>').appendTo(route_div);
-    routeb_link.text(json1.routeb_link).addClass('top_link_content');
-    routeb_link.attr('href', json1.href02);
+    var roota_link = $('<a>').appendTo(route_div);
+    roota_link.text(json1.roota_link).addClass('top_link_content');
+    roota_link.attr('href', json1.roota_href);
+    var rootb_link = $('<a>').appendTo(route_div);
+    rootb_link.text(json1.rootb_link).addClass('top_link_content');
+    rootb_link.attr('href', json1.rootb_href);
 }
 
 /**
@@ -91,7 +91,7 @@ function createResult(target3, json3) {
     var question_div = $('<div>').appendTo(target3).addClass('list_item');
     // 設問の作成
     var title_div = $('<div>').appendTo(question_div).addClass('title_box');
-    $('<p>').appendTo(title_div).text(json3.title).addClass('title');
+    $('<p>').appendTo(title_div).text(json3.number).addClass('title');
     $('<p>').appendTo(question_div).text(json3.content01).addClass('result_heading01');
     $('<p>').appendTo(question_div).text(json3.content02).addClass('result_heading01');
     $('<p>').appendTo(question_div).text(json3.list01).addClass('result_list_content01 clear');
@@ -103,12 +103,12 @@ function createResult(target3, json3) {
     var report_link = $('<a>').appendTo(question_div);
     report_link.text(json3.link_list).addClass('result_list_content01');
     report_link.attr('href', json3.report_href);
-    var routea_link = $('<a>').appendTo(question_div);
-    routea_link.text(json3.routea_link).addClass('result_list_content02');
-    routea_link.attr('href', json3.href01);
-    var routeb_link = $('<a>').appendTo(question_div);
-    routeb_link.text(json3.routeb_link).addClass('result_list_content02');
-    routeb_link.attr('href', json3.href02);
+    var roota_link = $('<a>').appendTo(question_div);
+    roota_link.text(json3.roota_link).addClass('result_list_content02');
+    roota_link.attr('href', json3.roota_href);
+    var rootb_link = $('<a>').appendTo(question_div);
+    rootb_link.text(json3.rootb_link).addClass('result_list_content02');
+    rootb_link.attr('href', json3.rootb_href);
     //選択した設問表示
     var result_div = $('<div>').appendTo(target3).addClass('table_box');
     var table01 = $('<table>').appendTo(result_div);

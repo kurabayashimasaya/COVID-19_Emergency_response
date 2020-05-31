@@ -1,3 +1,16 @@
+/**
+ * index.html
+ * id...HTML上のdiv要素のidと紐づき、DOMの作成に使用
+ * content...タイトル
+ * list01~list03...一覧
+ * roota_link...ルートAのテキスト
+ * roota_href...ルートAのリンク
+ * rootb_link...ルートBのテキスト
+ * rootb_href...ルートBのリンク
+ * top_id...ボタンのid
+ * next_content...topボタンのテキスト
+ * top_href...topボタンのリンク
+ */
 var json1 = [
   {
       "id" : "T00",
@@ -5,16 +18,30 @@ var json1 = [
       "list01" : "・身近に感染者が存在するまたは、存在した場合",
       "list02" : "・現在発熱がある場合",
       "list03" : "",
-      "routea_link" : "ルートAはこちら",
-      "href01" : "test.html?questionid=10&questionno=0&f=0",
-      "routeb_link" : "ルートBはこちら",
-      "href02" : "test.html?questionid=12&questionno=0&f=0",
+      "roota_link" : "ルートAはこちら",
+      "roota_href" : "test.html?questionid=10&questionno=0&f=0",
+      "rootb_link" : "ルートBはこちら",
+      "rootb_href" : "test.html?questionid=12&questionno=0&f=0",
       "top_id" : "Q01",
       "next_content" : "診断開始",
       "top_href" : "test.html?questionid=0&questionno=0&f=0"
   }
 ];
-
+/**
+ * test.html
+ * id...HTML上のdiv要素のidと紐づき、DOMの作成に使用
+ * content...タイトル
+ * list01~list04...一覧
+ * yes_id...YESボタンのid
+ * yes_content...YESボタンのテキスト
+ * yes_button_href...YESボタンのリンク
+ * no_id...NOボタンのid
+ * no_content...NOボタンのテキスト
+ * no_button_href...NOボタンのリンク
+ * return_id...returnボタンのid
+ * return_content...returnボタンのテキスト
+ * return_button_href...returnボタンのリンク
+ */
 var json2 = [
     {
         "id" : "Q01",
@@ -202,7 +229,6 @@ var json2 = [
     },
     {
         "id" : "Q02_a",
-        "a" : "1",
         "content" : "当事者が陽性であると判断された。",
         "list01" : "",
         "list02" : "",
@@ -236,11 +262,26 @@ var json2 = [
         "return_button_href" : "test.html"
     }
 ];
-
+/**
+ * result.html
+ * id...HTML上のdiv要素のidと紐づき、DOMの作成に使用
+ * number...質問番号
+ * content01~content03...見出し１
+ * list01~list03...一覧
+ * link_list...template.htmlのテキスト
+ * report_href...template.htmlのリンク
+ * exit_id...top画面に戻るボタンのid
+ * exit_content...top画面に戻るボタンのテキスト
+ * href...index.htmlのリンク
+ * roota_link...ルートAのテキスト
+ * roota_href...ルートAのリンク
+ * rootb_link...ルートBのテキスト
+ * rootb_href...ルートBのリンク
+ */
 var json3 = [
   {
       "id" : "A01",
-      "title" : "A01",
+      "number" : "A01",
       "content01" : "○通常通りの生活・業務を行ってください。",
       "content02" : "",
       "list01" : "",
@@ -255,7 +296,7 @@ var json3 = [
   },
   {
       "id" : "A03",
-      "title" : "A03",
+      "number" : "A03",
       "content01" : "○まず、営業へ電話で状況を簡潔に伝えてください。",
       "content02" : "",
       "list01" : "・優先順位：今井＞小鹿または高橋の順番で電話してください。",
@@ -270,7 +311,7 @@ var json3 = [
   },
   {
       "id" : "A02",
-      "title" : "A02",
+      "number" : "A02",
       "content01" : "",
       "content02" : "○まず、営業へ電話で状況を伝えてください。",
       "list01" : "・優先順位：今井＞小鹿または高橋の順番で電話してください。",
@@ -285,7 +326,7 @@ var json3 = [
   },
   {
       "id" : "A04",
-      "title" : "A04",
+      "number" : "A04",
       "content01" : "○通院・診察を受け、医師の指示に従ってください。",
       "content02" : "○まず、営業へ電話で状況を伝えてください。",
       "list01" : "・優先順位：今井＞小鹿または高橋の順番で電話してください。",
@@ -294,15 +335,15 @@ var json3 = [
       "list03" : "",
       "link_list" : "※1状況の報告についてはこちら",
       "report_href" : "template.html",
-      "routea_link" : "ルートAはこちら",
-      "href01" : "test.html?questionid=10&beforeid=0&questionno=0&f=0",
+      "roota_link" : "ルートAはこちら",
+      "roota_href" : "test.html?questionid=10&beforeid=0&questionno=0&f=0",
       "exit_id" : "T00",
       "exit_content" : "topに戻る",
       "href" : "index.html"
   },
   {
       "id" : "A05",
-      "title" : "A05",
+      "number" : "A05",
       "content01" : "○医師の指示に従ってください。",
       "content02" : "○まず、営業へ電話で状況を伝えてください。",
       "list01" : "・優先順位：今井＞小鹿または高橋の順番で電話してください。",
@@ -311,15 +352,15 @@ var json3 = [
       "list03" : "・体調回復後は、「ルートB」を参照してフローの確認を進めてください。",
       "link_list" : "※1状況の報告についてはこちら",
       "report_href" : "template.html",
-      "routeb_link" : "ルートBはこちら",
-      "href02" : "test.html?questionid=12&questionno=0&f=0",
+      "rootb_link" : "ルートBはこちら",
+      "rootb_href" : "test.html?questionid=12&questionno=0&f=0",
       "exit_id" : "T00",
       "exit_content" : "topに戻る",
       "href" : "index.html"
   },
   {
       "id" : "A06",
-      "title" : "A06",
+      "number" : "A06",
       "content01" : "○医師の指示に従ってください。",
       "content02" : "○日々の体調・病状状況の報告※1を行ってください。",
       "list01" : "・体調回復後は、「ルートB」を参照してフローの確認を進めてください。",
@@ -328,13 +369,27 @@ var json3 = [
       "list03" : "",
       "link_list" : "※1状況の報告についてはこちら",
       "report_href" : "template.html",
-      "routeb_link" : "ルートBはこちら",
-      "href02" : "test.html?questionid=12&questionno=0&f=0",
+      "rootb_link" : "ルートBはこちら",
+      "rootb_href" : "test.html?questionid=12&questionno=0&f=0",
       "exit_id" : "T00",
       "exit_content" : "topに戻る",
       "href" : "index.html"
   }
 ];
+/**
+ * template.html
+ * id...HTML上のdiv要素のidと紐づき、DOMの作成に使用
+ * title...タイトル
+ * item01~item15...一覧、リスト、項目
+ * item_to...toのテキスト
+ * id01...toのid
+ * id02~id03...ccのid
+ * href_mail...mailリンク
+ * item_mail01~item_mail03...mailアドレス
+ * exit_id...topのid
+ * exit_content...topに戻るテキスト
+ * href...index.html
+ */
 var json4 = [
   {
       "id" : "tmp",
@@ -368,6 +423,17 @@ var json4 = [
       "href" : "index.html"
   }
 ];
+/**
+ * overview.html
+ * id...HTML上のdiv要素のidと紐づき、DOMの作成に使用
+ * title...タイトル
+ * content01~content04...見出し
+ * item01~item10...一覧、リスト
+ * li01~li03...項目
+ * exit_id...topのid
+ * exit_content...topに戻るテキスト
+ * href...index.html
+ */
 var json5 = [
   {
       "id" : "view",
